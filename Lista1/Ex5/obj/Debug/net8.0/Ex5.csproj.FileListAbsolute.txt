@@ -1,0 +1,15 @@
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/bin/Debug/net8.0/Ex5
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/bin/Debug/net8.0/Ex5.deps.json
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/bin/Debug/net8.0/Ex5.runtimeconfig.json
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/bin/Debug/net8.0/Ex5.dll
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/bin/Debug/net8.0/Ex5.pdb
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/obj/Debug/net8.0/Ex5.GeneratedMSBuildEditorConfig.editorconfig
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/obj/Debug/net8.0/Ex5.AssemblyInfoInputs.cache
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/obj/Debug/net8.0/Ex5.AssemblyInfo.cs
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/obj/Debug/net8.0/Ex5.csproj.CoreCompileInputs.cache
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/obj/Debug/net8.0/Ex5.sourcelink.json
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/obj/Debug/net8.0/Ex5.dll
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/obj/Debug/net8.0/refint/Ex5.dll
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/obj/Debug/net8.0/Ex5.pdb
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/obj/Debug/net8.0/Ex5.genruntimeconfig.cache
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Lista1/Ex5/obj/Debug/net8.0/ref/Ex5.dll
