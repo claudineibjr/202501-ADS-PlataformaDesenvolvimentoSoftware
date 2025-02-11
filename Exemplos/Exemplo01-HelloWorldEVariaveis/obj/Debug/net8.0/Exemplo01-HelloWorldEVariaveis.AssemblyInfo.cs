@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Exemplo01-HelloWorldEVariaveis")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44b9ce2a46cd34954eed08b9a8efd2d586621b7c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9204bc956b62ef68e64f7596258fa69e3df12d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Exemplo01-HelloWorldEVariaveis")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Exemplo01-HelloWorldEVariaveis")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

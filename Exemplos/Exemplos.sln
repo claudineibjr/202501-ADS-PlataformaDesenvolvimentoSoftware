@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplos", "Exemplos\Exempl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo01-HelloWorldEVariaveis", "Exemplo01-HelloWorldEVariaveis\Exemplo01-HelloWorldEVariaveis.csproj", "{50209968-C73A-4E29-93B7-4F4044352D9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo02-ConversaoDeTipos", "Exemplo02-ConversaoDeTipos\Exemplo02-ConversaoDeTipos.csproj", "{F34B86C3-EC24-438C-84C6-7A8AEB8E3EFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo03-FormatacaoString", "Exemplo03-FormatacaoString\Exemplo03-FormatacaoString.csproj", "{E53F678C-C1E7-4C93-B41F-0A10C3BDA804}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{50209968-C73A-4E29-93B7-4F4044352D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50209968-C73A-4E29-93B7-4F4044352D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50209968-C73A-4E29-93B7-4F4044352D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F34B86C3-EC24-438C-84C6-7A8AEB8E3EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F34B86C3-EC24-438C-84C6-7A8AEB8E3EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F34B86C3-EC24-438C-84C6-7A8AEB8E3EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F34B86C3-EC24-438C-84C6-7A8AEB8E3EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E53F678C-C1E7-4C93-B41F-0A10C3BDA804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E53F678C-C1E7-4C93-B41F-0A10C3BDA804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E53F678C-C1E7-4C93-B41F-0A10C3BDA804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E53F678C-C1E7-4C93-B41F-0A10C3BDA804}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

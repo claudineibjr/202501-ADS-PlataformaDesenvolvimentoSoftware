@@ -1,0 +1,15 @@
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/bin/Debug/net8.0/Exemplo03-FormatacaoString
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/bin/Debug/net8.0/Exemplo03-FormatacaoString.deps.json
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/bin/Debug/net8.0/Exemplo03-FormatacaoString.runtimeconfig.json
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/bin/Debug/net8.0/Exemplo03-FormatacaoString.dll
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/bin/Debug/net8.0/Exemplo03-FormatacaoString.pdb
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/obj/Debug/net8.0/Exemplo03-FormatacaoString.GeneratedMSBuildEditorConfig.editorconfig
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/obj/Debug/net8.0/Exemplo03-FormatacaoString.AssemblyInfoInputs.cache
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/obj/Debug/net8.0/Exemplo03-FormatacaoString.AssemblyInfo.cs
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/obj/Debug/net8.0/Exemplo03-FormatacaoString.csproj.CoreCompileInputs.cache
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/obj/Debug/net8.0/Exemplo03-FormatacaoString.sourcelink.json
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/obj/Debug/net8.0/Exemplo03-FormatacaoString.dll
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/obj/Debug/net8.0/refint/Exemplo03-FormatacaoString.dll
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/obj/Debug/net8.0/Exemplo03-FormatacaoString.pdb
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/obj/Debug/net8.0/Exemplo03-FormatacaoString.genruntimeconfig.cache
+/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo03-FormatacaoString/obj/Debug/net8.0/ref/Exemplo03-FormatacaoString.dll
