@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/HelloWorldEVariaveis/HelloWorldEVariaveis.csproj",
-      "projectName": "HelloWorldEVariaveis",
-      "projectPath": "/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/HelloWorldEVariaveis/HelloWorldEVariaveis.csproj",
+      "projectUniqueName": "/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo01-HelloWorldEVariaveis/Exemplo01-HelloWorldEVariaveis.csproj",
+      "projectName": "Exemplo01-HelloWorldEVariaveis",
+      "projectPath": "/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo01-HelloWorldEVariaveis/Exemplo01-HelloWorldEVariaveis.csproj",
       "packagesPath": "/Users/claudineibjr/.nuget/packages/",
-      "outputPath": "/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/HelloWorldEVariaveis/obj/",
+      "outputPath": "/Users/claudineibjr/Unimar/Projetos/202501-ADS-PlataformaDesenvolvimentoSoftware/Exemplos/Exemplo01-HelloWorldEVariaveis/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/claudineibjr/.nuget/NuGet/NuGet.Config"
