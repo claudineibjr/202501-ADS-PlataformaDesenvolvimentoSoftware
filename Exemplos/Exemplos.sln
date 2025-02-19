@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo03-FormatacaoString"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo04-EntradaESaidaTexto", "Exemplo04-EntradaESaidaTexto\Exemplo04-EntradaESaidaTexto.csproj", "{B910512E-F5EE-41A9-8289-CABD888F8A48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo05-IfElse", "Exemplo05-IfElse\Exemplo05-IfElse.csproj", "{B80C4698-311C-4B07-9E9C-0CD4BA67882F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B910512E-F5EE-41A9-8289-CABD888F8A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B910512E-F5EE-41A9-8289-CABD888F8A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B910512E-F5EE-41A9-8289-CABD888F8A48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B80C4698-311C-4B07-9E9C-0CD4BA67882F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B80C4698-311C-4B07-9E9C-0CD4BA67882F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B80C4698-311C-4B07-9E9C-0CD4BA67882F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B80C4698-311C-4B07-9E9C-0CD4BA67882F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
