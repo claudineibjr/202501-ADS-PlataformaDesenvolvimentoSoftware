@@ -1,0 +1,35 @@
+id: 202501-3ADS-PlatDS-Lista2-Ex3
+title: Lista 2 - Ex 3 (Plataforma de Desenvolvimento de Software)
+description: |-
+  3. (Ordenação crescente) Implemente um programa que receba do usuário três números e ordene-os do menor para o maior. (nível 2)
+tests:
+  - public: true
+    input: |-
+      5
+      3
+      8
+    expected_output: '3 5 8'
+  - public: true
+    input: |-
+      1
+      7
+      4
+    expected_output: '1 4 7'
+  - public: true
+    input: |-
+      10
+      2
+      6
+    expected_output: '2 6 10'
+  - public: true
+    input: |-
+      9
+      4
+      5
+    expected_output: '4 5 9'
+  - public: true
+    input: |-
+      15
+      12
+      10
+    expected_output: '10 12 15'

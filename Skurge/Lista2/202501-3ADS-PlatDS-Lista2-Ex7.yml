@@ -1,0 +1,46 @@
+id: 202501-3ADS-PlatDS-Lista2-Ex7
+title: Lista 2 - Ex 7 (Plataforma de Desenvolvimento de Software)
+description: |-
+  7. (Financiamento e quitação) Incremente o Exercício 11 da Lista de Exercícios 01 (financiamento).
+   - Caso o usuário tenha pago menos de 50% do valor total, ofereça uma opção de quitação do financiamento com 5% de desconto para o pagamento à vista.
+   - Caso o usuário tenha pago menos de 25% do valor total, ofereça uma opção de quitação do financiamento com 10% de desconto para o pagamento à vista.
+  
+  Exiba o valor que o usuário economizaria escolhendo quitar o financiamento. (nível 4)
+tests:
+  - public: true
+    input: |-
+      20000
+      40
+      34
+    expected_output: |-
+      Resumo do financiamento
+       - Parcela mensal: R$ 500,00
+       - Valor total pago: R$ 17.000,00 | Valor a pagar: R$ 3.000,00
+       - Valor total: R$ 20.000,00
+       - Progresso: 34 / 40 (85.00%) de parcelas pagas - 6 parcelas a pagar
+  - public: true
+    input: |-
+      40000
+      80
+      34
+    expected_output: |-
+      Resumo do financiamento
+       - Parcela mensal: R$ 500,00
+       - Valor total pago: R$ 17.000,00 | Valor a pagar: R$ 23.000,00
+       - Valor total: R$ 40.000,00
+       - Progresso: 34 / 80 (42.50%) de parcelas pagas - 46 parcelas a pagar
+
+       Oferta: Você economizaria R$ 1.150,00 com o pagamento à vista com 5% de desconto
+  - public: true
+    input: |-
+      80000
+      160
+      34
+    expected_output: |-
+      Resumo do financiamento
+       - Parcela mensal: R$ 500,00
+       - Valor total pago: R$ 17.000,00 | Valor a pagar: R$ 63.000,00
+       - Valor total: R$ 80.000,00
+       - Progresso: 34 / 160 (21.25%) de parcelas pagas - 126 parcelas a pagar
+
+       Oferta: Você economizaria R$ 6.300,00 com o pagamento à vista com 10% de desconto

@@ -1,0 +1,35 @@
+id: 202501-3ADS-PlatDS-Lista2-Ex2
+title: Lista 2 - Ex 2 (Plataforma de Desenvolvimento de Software)
+description: |-
+  2. (Calculadora) Implemente uma calculadora básica. O usuário deve informar o primeiro operando, depois disso a operação (+, -, * ou /) e depois disso o segundo operando. (nível 1)
+tests:
+  - public: true
+    input: |-
+      5
+      +
+      3
+    expected_output: '8'
+  - public: true
+    input: |-
+      10
+      -
+      4
+    expected_output: '6'
+  - public: true
+    input: |-
+      7
+      *
+      6
+    expected_output: '42'
+  - public: true
+    input: |-
+      8
+      /
+      2
+    expected_output: '4'
+  - public: true
+    input: |-
+      15
+      /
+      3
+    expected_output: '5'

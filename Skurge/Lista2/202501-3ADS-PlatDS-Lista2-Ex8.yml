@@ -1,0 +1,75 @@
+id: 202501-3ADS-PlatDS-Lista2-Ex8
+title: Lista 2 - Ex 8 (Plataforma de Desenvolvimento de Software)
+description: |-
+  8. (Notas com aprovação, sub e exame) Incremente o exercício 1, incluindo a possibilidade de prova substitutiva e exame.
+   - Substitutiva: Caso o aluno não seja aprovado direto, pergunte se ele quer fazer substitutiva (S / N), caso ele opte, leia a nota dele e use essa nota para substituir a menor nota.
+   - Exame: Caso após a sub o aluno esteja de exame, leia a nota de exame e calcule a nota final.
+  
+  Cálculo: (((Nota1 + Nota2) / 2) + Exame) / 2.
+  Para aprovação final, essa nota deve ser maior que 5.
+
+  Ordem das entradas: Nota 1 / Nota 2 / Decisão sobre sub (caso elegível) / Nota sub (caso tenha escolhido fazer sub) / Nota exame (caso elegível) (nível 5)
+
+tests:
+  - public: true
+    input: |-
+      6
+      9
+    expected_output: |-
+      7.50 - Aprovado
+  - public: true
+    input: |-
+      6
+      4
+      S
+      8
+    expected_output: |-
+      5.00 - Exame
+      7.00 - Aprovado
+  - public: true
+    input: |-
+      5
+      2.5
+      N
+    expected_output: |-
+      3.75 - Reprovado
+  - public: true
+    input: |-
+      5
+      2.5
+      S
+      2.5
+    expected_output: |-
+      3.75 - Reprovado
+      3.75 - Reprovado
+  - public: true
+    input: |-
+      5
+      4
+      N
+      5.3
+    expected_output: |-
+      4.50 - Exame
+      4.90 - Reprovado
+  - public: true
+    input: |-
+      5
+      2.5
+      S
+      5
+      6
+    expected_output: |-
+      3.75 - Reprovado
+      5.00 - Exame
+      5.50 - Aprovado
+  - public: true
+    input: |-
+      5
+      2.5
+      S
+      5
+      2
+    expected_output: |-
+      3.75 - Reprovado
+      5.00 - Exame
+      3.50 - Reprovado

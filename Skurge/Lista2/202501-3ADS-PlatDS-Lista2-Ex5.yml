@@ -1,0 +1,30 @@
+id: 202501-3ADS-PlatDS-Lista2-Ex5
+title: Lista 2 - Ex 5 (Plataforma de Desenvolvimento de Software)
+description: |-
+  5. (Etanol ou Gasolina - 70%) Implemente um programa para ler o preço do litro dos combustíveis (etanol e gasolina) e comparar qual o melhor combustível com base na economia. O etanol vale a pena quando custar até 70% do valor da gasolina. (nível 2)
+tests:
+  - public: true
+    input: |-
+      3.50
+      5.00
+    expected_output: 'Etanol'
+  - public: true
+    input: |-
+      3.60
+      5.00
+    expected_output: 'Gasolina'
+  - public: true
+    input: |-
+      4.00
+      5.50
+    expected_output: 'Gasolina'
+  - public: true
+    input: |-
+      4.50
+      6.00
+    expected_output: 'Gasolina'
+  - public: true
+    input: |-
+      3.99
+      7
+    expected_output: 'Etanol'

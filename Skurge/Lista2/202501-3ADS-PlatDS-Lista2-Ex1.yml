@@ -1,0 +1,34 @@
+id: 202501-3ADS-PlatDS-Lista2-Ex1
+title: Lista 2 - Ex 1 (Plataforma de Desenvolvimento de Software)
+description: |-
+  1. (Média e aprovação) Escreva um programa que receba duas notas e calcule a média final. As notas devem ser de 0 a 10. Calcule a situação de aprovação do aluno com base no seguinte critério:
+   - Nota >= 7 → Aprovado
+   - Nota < 7 e >= 4 → Exame
+   - Nota < 4 → Reprovado
+  A nota de aprovação (7) e a nota mínima (4) devem ser valores imutáveis no programa. (nível 1)
+tests:
+  - public: true
+    input: |-
+      8
+      9
+    expected_output: '8.50 - Aprovado'
+  - public: true
+    input: |-
+      5
+      6
+    expected_output: '5.50 - Exame'
+  - public: true
+    input: |-
+      2
+      3
+    expected_output: '2.50 - Reprovado'
+  - public: true
+    input: |-
+      10
+      7
+    expected_output: '8.50 - Aprovado'
+  - public: true
+    input: |-
+      4
+      4
+    expected_output: '4.00 - Exame'

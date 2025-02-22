@@ -1,0 +1,33 @@
+id: 202501-3ADS-PlatDS-Lista2-Ex6
+title: Lista 2 - Ex 6 (Plataforma de Desenvolvimento de Software)
+description: |-
+  8. (Etanol ou gasolina - consumo real) Incremente o exercício 5 (Etanol ou Gasolina - 70%), de forma a ler o consumo de combustível do carro e não mais considerar a regra de 70%. (nível 3)
+tests:
+  - public: true
+    input: |-
+      3.50
+      10
+      5.00
+      12
+    expected_output: 'Etanol'
+  - public: true
+    input: |-
+      4.00
+      8
+      5.50
+      10
+    expected_output: 'Etanol'
+  - public: true
+    input: |-
+      3.60
+      6
+      5.00
+      10
+    expected_output: 'Gasolina'
+  - public: true
+    input: |-
+      4.50
+      6
+      6.00
+      8
+    expected_output: 'Empate'

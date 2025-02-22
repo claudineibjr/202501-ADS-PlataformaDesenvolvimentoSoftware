@@ -1,0 +1,40 @@
+id: 202501-3ADS-PlatDS-Lista2-Ex4
+title: Lista 2 - Ex 4 (Plataforma de Desenvolvimento de Software)
+description: |-
+  4. (Ordenação com opção) Incremente o programa anterior, de forma que o usuário decida se a ordenação será crescente “C” ou decrescente “D”. (nível 2)
+tests:
+  - public: true
+    input: |-
+      5
+      3
+      8
+      C
+    expected_output: '3 5 8'
+  - public: true
+    input: |-
+      1
+      7
+      4
+      C
+    expected_output: '1 4 7'
+  - public: true
+    input: |-
+      10
+      2
+      6
+      C
+    expected_output: '2 6 10'
+  - public: true
+    input: |-
+      9
+      4
+      5
+      D
+    expected_output: '9 5 4'
+  - public: true
+    input: |-
+      15
+      12
+      10
+      D
+    expected_output: '15 12 10'
