@@ -1,0 +1,385 @@
+id: 202501-3ADS-PlatDS-Lista4-Ex01
+title: Lista 4 - Ex 01 (Plataforma de Desenvolvimento de Software)
+description: |-
+  1. (Média de idade - Número de alunos fixo (5 alunos)) Implemente um programa que leia a idade de 5 usuários e calcule a média de idade.
+tests:
+  - public: true
+    input: |-
+      18
+      20
+      22
+      24
+      26
+    expected_output: '22.00'
+  - public: true
+    input: |-
+      30
+      30
+      30
+      30
+      30
+    expected_output: '30.00'
+  - public: true
+    input: |-
+      10
+      15
+      20
+      25
+      30
+    expected_output: '20.00'
+  - public: true
+    input: |-
+      50
+      40
+      30
+      20
+      10
+    expected_output: '30.00'
+  - public: true
+    input: |-
+      18
+      21
+      19
+      22
+      20
+    expected_output: '20.00'
+labels:
+  tags: 202501-3ADS-PlatDS-Lista4
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista4-Ex02
+title: Lista 4 - Ex 02 (Plataforma de Desenvolvimento de Software)
+description: |-
+  2. (Preços de produtos - Número de produtos fixo (3 produtos)) Implemente um programa que leia o preço de 3 produtos e faça a soma desses produtos.
+tests:
+  - public: true
+    input: |-
+      10.50
+      20.75
+      30.00
+    expected_output: '61.25'
+  - public: true
+    input: |-
+      5.00
+      5.00
+      5.00
+    expected_output: '15.00'
+  - public: true
+    input: |-
+      99.99
+      0.01
+      50.00
+    expected_output: '150.00'
+  - public: true
+    input: |-
+      1.99
+      2.99
+      3.99
+    expected_output: '8.97'
+  - public: true
+    input: |-
+      0.00
+      0.00
+      0.00
+    expected_output: '0.00'
+labels:
+  tags: 202501-3ADS-PlatDS-Lista4
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista4-Ex03
+title: Lista 4 - Ex 03 (Plataforma de Desenvolvimento de Software)
+description: |-
+  3. (Exibição do nome de trás para frente) Implemente um programa que leia o nome do usuário e exiba este nome escrito de trás para frente.
+tests:
+  - public: true
+    input: |-
+      Ana
+    expected_output: 'anA'
+  - public: true
+    input: |-
+      João
+    expected_output: 'oãoJ'
+  - public: true
+    input: |-
+      Python
+    expected_output: 'nohtyP'
+  - public: true
+    input: |-
+      abc123
+    expected_output: '321cba'
+  - public: true
+    input: |-
+      X
+    expected_output: 'X'
+  - public: true
+    input: |-
+      OpenAI
+    expected_output: 'IAnepO'
+  - public: true
+    input: |-
+      Desenvolvimento
+    expected_output: 'otnemivlovnesoD'
+  - public: true
+    input: |-
+      A B C
+    expected_output: 'C B A'
+labels:
+  tags: 202501-3ADS-PlatDS-Lista4
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista4-Ex04
+title: Lista 4 - Ex 04 (Plataforma de Desenvolvimento de Software)
+description: |-
+  4. (Calculadora fatorial) Implemente uma calculadora fatorial. O usuário deve informar o número a ser calculado e o programa deve calcular o número fatorial daquele número e no final exibir o número que foi calculado e o resultado final.
+tests:
+  - public: true
+    input: |-
+      0
+    expected_output: '0! = 1'
+  - public: true
+    input: |-
+      1
+    expected_output: '1! = 1'
+  - public: true
+    input: |-
+      5
+    expected_output: '5! = 120'
+  - public: true
+    input: |-
+      7
+    expected_output: '7! = 5040'
+  - public: true
+    input: |-
+      10
+    expected_output: '10! = 3628800'
+labels:
+  tags: 202501-3ADS-PlatDS-Lista4
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista4-Ex05
+title: Lista 4 - Ex 05 (Plataforma de Desenvolvimento de Software)
+description: |-
+  5. (Menor e maior idade entre os alunos) Incremente o programa Média de idade - Número de alunos fixo (5 alunos), de forma a identificar a menor e a maior idade entre os alunos.
+tests:
+  - public: true
+    input: |-
+      18
+      20
+      22
+      24
+      26
+    expected_output: 'Média: 22.00 | Menor: 18 | Maior: 26'
+  - public: true
+    input: |-
+      30
+      30
+      30
+      30
+      30
+    expected_output: 'Média: 30.00 | Menor: 30 | Maior: 30'
+  - public: true
+    input: |-
+      10
+      15
+      20
+      25
+      30
+    expected_output: 'Média: 20.00 | Menor: 10 | Maior: 30'
+  - public: true
+    input: |-
+      50
+      40
+      30
+      20
+      10
+    expected_output: 'Média: 30.00 | Menor: 10 | Maior: 50'
+  - public: true
+    input: |-
+      18
+      21
+      19
+      22
+      20
+    expected_output: 'Média: 20.00 | Menor: 18 | Maior: 22'
+labels:
+  tags: 202501-3ADS-PlatDS-Lista4
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista4-Ex06
+title: Lista 4 - Ex 06 (Plataforma de Desenvolvimento de Software)
+description: |-
+  6. (Preços de produtos - Número de produtos variável) Implemente um programa que leia o número de produtos que o usuário quer digitar (X), depois disso, leia o preço de X produtos (a quantidade que o usuário solicitou) e faça a soma desses produtos.
+tests:
+  - public: true
+    input: |-
+      3
+      10.50
+      20.00
+      15.75
+    expected_output: 'Total: R$ 46,25'
+  - public: true
+    input: |-
+      1
+      99.99
+    expected_output: 'Total: R$ 99,99'
+  - public: true
+    input: |-
+      5
+      5.00
+      10.00
+      15.00
+      20.00
+      25.00
+    expected_output: 'Total: R$ 75,00'
+  - public: true
+    input: |-
+      2
+      0.99
+      1.01
+    expected_output: 'Total: R$ 2,00'
+  - public: true
+    input: |-
+      4
+      12.34
+      56.78
+      90.12
+      43.21
+    expected_output: 'Total: R$ 202,45'
+labels:
+  tags: 202501-3ADS-PlatDS-Lista4
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista4-Ex07
+title: Lista 4 - Ex 07 (Plataforma de Desenvolvimento de Software)
+description: |-
+  7. (Sorteio de alunos) Implemente um programa que leia o número de alunos que o usuário quer inserir no array, depois disso, leia o nome de cada um dos alunos, e então, sorteie um aluno entre todos os alunos incluídos.
+  Para submissão no Skurge, utilize o número 0 como a semente inicial da classe Random.
+tests:
+  - public: true
+    input: |-
+      3
+      Ana
+      Bruno
+      Carlos
+    expected_output: 'Aluno sorteado: Carlos'
+  - public: true
+    input: |-
+      5
+      Julia
+      Ricardo
+      Fernanda
+      Pedro
+      Carolina
+    expected_output: 'Aluno sorteado: Pedro'
+  - public: true
+    input: |-
+      2
+      Lucas
+      Marina
+    expected_output: 'Aluno sorteado: Marina'
+  - public: true
+    input: |-
+      4
+      Roberto
+      Isabela
+      Felipe
+      Amanda
+    expected_output: 'Aluno sorteado: Felipe'
+  - public: true
+    input: |-
+      1
+      Samuel
+    expected_output: 'Aluno sorteado: Samuel'
+labels:
+  tags: 202501-3ADS-PlatDS-Lista4
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista4-Ex08
+title: Lista 4 - Ex 08 (Plataforma de Desenvolvimento de Software)
+description: |-
+  TBD
+tests:
+
+labels:
+  tags: 202501-3ADS-PlatDS-Lista4
+
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista4-Ex09
+title: Lista 4 - Ex 09 (Plataforma de Desenvolvimento de Software)
+description: |-
+  TBD
+tests:
+
+labels:
+  tags: 202501-3ADS-PlatDS-Lista4
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista4-Ex10
+title: Lista 4 - Ex 10 (Plataforma de Desenvolvimento de Software)
+description: |-
+  TBD
+tests:
+
+labels:
+  tags: 202501-3ADS-PlatDS-Lista4
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista4-Ex11
+title: Lista 4 - Ex 11 (Plataforma de Desenvolvimento de Software)
+description: |-
+  TBD
+tests:
+
+labels:
+  tags: 202501-3ADS-PlatDS-Lista4
