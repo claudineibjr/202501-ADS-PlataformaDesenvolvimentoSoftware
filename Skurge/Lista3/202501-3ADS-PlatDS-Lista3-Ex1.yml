@@ -1,0 +1,311 @@
+id: 202501-3ADS-PlatDS-Lista3-Ex1
+title: Lista 3 - Ex 1 (Plataforma de Desenvolvimento de Software)
+description: |-
+  1. (Notas como conceito) Implemente um programa que faça uma conversão de notas para conceitos (MB - Muito bom, B - Bom, R - Regular, I - Insatisfatório)
+  Tabela de equivalência
+     - MB - 9 ou acima
+     - B - Entre 7 e 9
+     - R - Entre 5 e 7
+     - I - Abaixo de 5
+tests:
+  - public: true
+    input: |-
+      10
+    expected_output: "MB"
+  - public: true
+    input: |-
+      9
+    expected_output: "MB"
+  - public: true
+    input: |-
+      7.5
+    expected_output: "B"
+  - public: true
+    input: |-
+      7
+    expected_output: "B"
+  - public: true
+    input: |-
+      6.5
+    expected_output: "R"
+  - public: true
+    input: |-
+      5
+    expected_output: "R"
+  - public: true
+    input: |-
+      4.75
+    expected_output: "I"
+  - public: true
+    input: |-
+      0
+    expected_output: "I"
+labels:
+  tags: 202501-3ADS-PlatDS-Lista3
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista3-Ex2
+title: Lista 3 - Ex 2 (Plataforma de Desenvolvimento de Software)
+description: |-
+  1. (Ano bissexto) Implemente um programa que receba do usuário um ano e informe se este ano é bissexto ou não. Um ano é bissexto se for divisível por 4, mas não por 100. Um ano também é bissexto se for divisível por 400.
+tests:
+  - public: true
+    input: |-
+      2000
+    expected_output: "Bissexto"
+  - public: true
+    input: |-
+      1900
+    expected_output: "Não bissexto"
+  - public: true
+    input: |-
+      2024
+    expected_output: "Bissexto"
+  - public: true
+    input: |-
+      2023
+    expected_output: "Não bissexto"
+  - public: true
+    input: |-
+      2020
+    expected_output: "Bissexto"
+  - public: true
+    input: |-
+      2100
+    expected_output: "Não bissexto"
+labels:
+  tags: 202501-3ADS-PlatDS-Lista3
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista3-Ex3
+title: Lista 3 - Ex 3 (Plataforma de Desenvolvimento de Software)
+description: |-
+  3. (Formatação de data) Implemente um programa que com base em um dia, mês e ano informados pelo usuário, exiba a data completa - dia exibido com 2 dígitos e mês informado pelo nome.
+tests:
+  - public: true
+    input: |-
+      1
+      1
+      2024
+    expected_output: "01 de janeiro de 2024"
+  - public: true
+    input: |-
+      15
+      2
+      1999
+    expected_output: "15 de fevereiro de 1999"
+  - public: true
+    input: |-
+      30
+      4
+      2000
+    expected_output: "30 de abril de 2000"
+  - public: true
+    input: |-
+      31
+      7
+      2010
+    expected_output: "31 de julho de 2010"
+  - public: true
+    input: |-
+      9
+      8
+      2022
+    expected_output: "09 de agosto de 2022"
+  - public: true
+    input: |-
+      31
+      13
+      2021
+    expected_output: "Data inválida"
+labels:
+  tags: 202501-3ADS-PlatDS-Lista3
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista3-Ex4
+title: Lista 3 - Ex 4 (Plataforma de Desenvolvimento de Software)
+description: |-
+  4. Incremente o Exercício 10 da Lista de Exercícios 01 (veja abaixo).
+
+  Lista1.Ex9. Escreva um programa que receba do usuário o nome de um produto, o valor e a quantidade. No final, o programa deve exibir o valor total da compra e também o nome do produto.
+  Lista1.Ex10. Incremente o programa anterior, de forma que sejam 3 produtos e seja exibido o valor total e também o total por produto.
+
+  Após a exibição do valor total, solicite ao usuário qual a forma de pagamento, as opções sendo PIX (opção P), Cartão de Crédito (opção CC) / Débito (opção CD) e Dinheiro (opção D).
+   - Caso opte pelo PIX, o usuário deve receber um desconto de 7%.
+   - Caso opte por dinheiro, o usuário deve receber um desconto de 5%.
+   - Caso opte por cartão de crédito, pergunte em quantas parcelas deve ser parcelado, e;
+    - caso o parcelamento seja em mais do que 5 parcelas, deve haver um acréscimo de 5% no valor total.
+    - caso o parcelamento seja em mais do que 10 parcelas, deve haver um acréscimo de 7% no valor total.
+
+  Exiba o valor total da compra e também o valor final da compra (já com o desconto/acréscimo de acordo com a forma de pagamento) e caso tenha sido parcelado, exiba o valor de cada parcela.
+tests:
+  - public: true
+    input: |-
+      Sabão em pó
+      25.25
+      4
+      Pilha AAA
+      4.50
+      6
+      Café
+      35
+      3
+      P
+    expected_output: |-
+      Total: R$ 233,00
+       - 4x Sabão em pó - R$ 101,00
+       - 6x Pilha AAA - R$ 27,00
+       - 3x Café - R$ 105,00
+      Valor final: R$ 216,69
+  - public: true
+    input: |-
+      Sabão em pó
+      25.25
+      4
+      Pilha AAA
+      4.50
+      6
+      Café
+      35
+      3
+      D
+    expected_output: |-
+      Total: R$ 233,00
+       - 4x Sabão em pó - R$ 101,00
+       - 6x Pilha AAA - R$ 27,00
+       - 3x Café - R$ 105,00
+      Valor final: R$ 221,35
+  - public: true
+    input: |-
+      Sabão em pó
+      25.25
+      4
+      Pilha AAA
+      4.50
+      6
+      Café
+      35
+      3
+      CD
+    expected_output: |-
+      Total: R$ 233,00
+       - 4x Sabão em pó - R$ 101,00
+       - 6x Pilha AAA - R$ 27,00
+       - 3x Café - R$ 105,00
+      Valor final: R$ 233,00
+  - public: true
+    input: |-
+      Sabão em pó
+      25.25
+      4
+      Pilha AAA
+      4.50
+      6
+      Café
+      35
+      3
+      CC
+      5
+    expected_output: |-
+      Total: R$ 233,00
+       - 4x Sabão em pó - R$ 101,00
+       - 6x Pilha AAA - R$ 27,00
+       - 3x Café - R$ 105,00
+      Valor final: R$ 233,00 em 5 parcelas de R$ 46,60
+  - public: true
+    input: |-
+      Sabão em pó
+      25.25
+      4
+      Pilha AAA
+      4.50
+      6
+      Café
+      35
+      3
+      CC
+      10
+    expected_output: |-
+      Total: R$ 233,00
+       - 4x Sabão em pó - R$ 101,00
+       - 6x Pilha AAA - R$ 27,00
+       - 3x Café - R$ 105,00
+      Valor final: R$ 244,65 em 6 parcelas de R$ 24,46
+  - public: true
+    input: |-
+      Sabão em pó
+      25.25
+      4
+      Pilha AAA
+      4.50
+      6
+      Café
+      35
+      3
+      CC
+      15
+    expected_output: |-
+      Total: R$ 233,00
+       - 4x Sabão em pó - R$ 101,00
+       - 6x Pilha AAA - R$ 27,00
+       - 3x Café - R$ 105,00
+      Valor final: R$ 249,31 em 15 parcelas de R$ 16,62
+labels:
+  tags: 202501-3ADS-PlatDS-Lista3
+
+
+
+---
+
+
+
+id: 202501-3ADS-PlatDS-Lista3-Ex5
+title: Lista 3 - Ex 5 (Plataforma de Desenvolvimento de Software)
+description: |-
+  5. (Tarifa de estacionamento) Implemente um programa que receba o tempo (em horas) de permanência de um carro no estacionamento.
+  O preço deve ser calculado da seguinte forma:
+    - Até 2 horas: R$ 5,00 fixo
+    - De 3 a 5 horas: R$ 5,00 fixo + R$ 2,00 por hora adicional (além de 2 horas)
+    - Mais de 5 horas: R$ 10,00 + R$ 1,50 por hora adicional (além de 5 horas)
+tests:
+  - public: true
+    input: |-
+      2
+    expected_output: "R$ 5,00"
+  - public: true
+    input: |-
+      3
+    expected_output: "R$ 7,00"
+  - public: true
+    input: |-
+      5
+    expected_output: "R$ 10,00"
+  - public: true
+    input: |-
+      6
+    expected_output: "R$ 11,50"
+  - public: true
+    input: |-
+      10
+    expected_output: "R$ 17,50"
+  - public: true
+    input: |-
+      15
+    expected_output: "R$ 25,00"
+labels:
+  tags: 202501-3ADS-PlatDS-Lista3
