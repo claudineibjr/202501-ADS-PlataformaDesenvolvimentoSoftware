@@ -1,14 +1,4 @@
-﻿/* Escreva um programa que receba o valor total de um financiamento, o número
-total de parcelas e o número de parcelas já pagas. (nível 4) Com base nisso, informe ao usuário:
-Valor da parcela mensal
-Valor já pago
-Valor a pagar
-Valor total do financiamento
-Número de parcelas pagas
-Número de parcelas a pagar
-% já pago
-Ordem dos dados de entrada: Valor total do financiamento / Número total de parcelas / Número de parcelas pagas
-*/
+﻿using System.Globalization;
 
 // Entrada
 decimal valorTotal = Convert.ToDecimal(Console.ReadLine());
@@ -23,9 +13,9 @@ decimal valorAPagar = numParcelasAPagar * parcelaMensal;
 decimal percentualPago = (decimal)(numParcelasPagas) / (decimal)(numParcelas) * 100;
 
 string mensagem = @$"Resumo do financiamento
- - Parcela mensal: R$ {parcelaMensal:f2}
- - Valor total pago: R$ {valorPago:f2} | Valor a pagar: R$ {valorAPagar:f2}
- - Valor total: R$ {valorTotal:f2}
+ - Parcela mensal: {parcelaMensal.ToString("C", CultureInfo.GetCultureInfo("pt-BR"))}
+ - Valor total pago: {valorPago.ToString("C", CultureInfo.GetCultureInfo("pt-BR"))} | Valor a pagar: {valorAPagar.ToString("C", CultureInfo.GetCultureInfo("pt-BR"))}
+ - Valor total: {valorTotal.ToString("C", CultureInfo.GetCultureInfo("pt-BR"))}
  - Progresso: {numParcelasPagas} / {numParcelas} ({percentualPago:f2}%) de parcelas pagas - {numParcelasAPagar} parcelas a pagar";
 
 Console.WriteLine(mensagem);
