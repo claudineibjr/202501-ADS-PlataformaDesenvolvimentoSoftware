@@ -3,19 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplos", "Exemplos\Exemplos.csproj", "{6E5F76F0-79FB-4681-B242-4AF9B8606793}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplos", "Exemplos\Exemplos.csproj", "{6E5F76F0-79FB-4681-B242-4AF9B8606793}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo01-HelloWorldEVariaveis", "Exemplo01-HelloWorldEVariaveis\Exemplo01-HelloWorldEVariaveis.csproj", "{50209968-C73A-4E29-93B7-4F4044352D9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo01-HelloWorldEVariaveis", "Exemplo01-HelloWorldEVariaveis\Exemplo01-HelloWorldEVariaveis.csproj", "{50209968-C73A-4E29-93B7-4F4044352D9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo02-ConversaoDeTipos", "Exemplo02-ConversaoDeTipos\Exemplo02-ConversaoDeTipos.csproj", "{F34B86C3-EC24-438C-84C6-7A8AEB8E3EFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo02-ConversaoDeTipos", "Exemplo02-ConversaoDeTipos\Exemplo02-ConversaoDeTipos.csproj", "{F34B86C3-EC24-438C-84C6-7A8AEB8E3EFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo03-FormatacaoString", "Exemplo03-FormatacaoString\Exemplo03-FormatacaoString.csproj", "{E53F678C-C1E7-4C93-B41F-0A10C3BDA804}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo03-FormatacaoString", "Exemplo03-FormatacaoString\Exemplo03-FormatacaoString.csproj", "{E53F678C-C1E7-4C93-B41F-0A10C3BDA804}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo04-EntradaESaidaTexto", "Exemplo04-EntradaESaidaTexto\Exemplo04-EntradaESaidaTexto.csproj", "{B910512E-F5EE-41A9-8289-CABD888F8A48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo04-EntradaESaidaTexto", "Exemplo04-EntradaESaidaTexto\Exemplo04-EntradaESaidaTexto.csproj", "{B910512E-F5EE-41A9-8289-CABD888F8A48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo05-IfElse", "Exemplo05-IfElse\Exemplo05-IfElse.csproj", "{B80C4698-311C-4B07-9E9C-0CD4BA67882F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo05-IfElse", "Exemplo05-IfElse\Exemplo05-IfElse.csproj", "{B80C4698-311C-4B07-9E9C-0CD4BA67882F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo06-IfTernario", "Exemplo06-IfTernario\Exemplo06-IfTernario.csproj", "{7FA5B421-4F3D-40B8-B3C4-3E35CB286156}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo06-IfTernario", "Exemplo06-IfTernario\Exemplo06-IfTernario.csproj", "{7FA5B421-4F3D-40B8-B3C4-3E35CB286156}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo07-Array", "Exemplo07-Array\Exemplo07-Array.csproj", "{0364FE4C-40FC-4EE7-8AB2-706145E7912B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo08-ArrayTamanhoDinamico", "Exemplo08-ArrayTamanhoDinamico\Exemplo08-ArrayTamanhoDinamico.csproj", "{CA75CEB0-F9D7-45B0-84F4-C5E7FFCFD48E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{7FA5B421-4F3D-40B8-B3C4-3E35CB286156}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FA5B421-4F3D-40B8-B3C4-3E35CB286156}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FA5B421-4F3D-40B8-B3C4-3E35CB286156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0364FE4C-40FC-4EE7-8AB2-706145E7912B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0364FE4C-40FC-4EE7-8AB2-706145E7912B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0364FE4C-40FC-4EE7-8AB2-706145E7912B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0364FE4C-40FC-4EE7-8AB2-706145E7912B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA75CEB0-F9D7-45B0-84F4-C5E7FFCFD48E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA75CEB0-F9D7-45B0-84F4-C5E7FFCFD48E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA75CEB0-F9D7-45B0-84F4-C5E7FFCFD48E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA75CEB0-F9D7-45B0-84F4-C5E7FFCFD48E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
