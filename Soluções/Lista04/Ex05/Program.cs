@@ -2,7 +2,7 @@
 Média de idade - Número de alunos fixo (5 alunos), de forma a identificar a
 menor e a maior idade entre os alunos.*/
 
-int[] idades = new int[3];
+int[] idades = new int[5];
 int somaIdades = 0;
 
 int maior = 0, menor = 0;
