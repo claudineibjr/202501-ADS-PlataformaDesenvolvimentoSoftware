@@ -37,19 +37,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo16-Random", "Exemplo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo17-RandomFake", "Exemplo17-RandomFake\Exemplo17-RandomFake.csproj", "{A3D5A21D-7596-4099-BD0F-A84A133DD2FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo18-01-OperacoesArray-IndexOf", "Exemplo18-01-OperacoesArray-IndexOf\Exemplo18-01-OperacoesArray-IndexOf.csproj", "{1024D405-168D-4D92-B5F8-04E7453D3A39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo18-01-OperacoesArray-IndexOf", "Exemplo18-01-OperacoesArray-IndexOf\Exemplo18-01-OperacoesArray-IndexOf.csproj", "{1024D405-168D-4D92-B5F8-04E7453D3A39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo18-02-OperacoesArray-Sort", "Exemplo18-02-OperacoesArray-Sort\Exemplo18-02-OperacoesArray-Sort.csproj", "{11DD5D37-4CEA-4540-94DD-EA87527D02E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo18-02-OperacoesArray-Sort", "Exemplo18-02-OperacoesArray-Sort\Exemplo18-02-OperacoesArray-Sort.csproj", "{11DD5D37-4CEA-4540-94DD-EA87527D02E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo18-03-OperacoesArray-Reverse", "Exemplo18-03-OperacoesArray-Reverse\Exemplo18-03-OperacoesArray-Reverse.csproj", "{A2D98748-2F54-4890-A580-1D89E67A2168}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo18-03-OperacoesArray-Reverse", "Exemplo18-03-OperacoesArray-Reverse\Exemplo18-03-OperacoesArray-Reverse.csproj", "{A2D98748-2F54-4890-A580-1D89E67A2168}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo18-04-OperacoesArray-Copy", "Exemplo18-04-OperacoesArray-Copy\Exemplo18-04-OperacoesArray-Copy.csproj", "{A9C2052D-D861-44F7-9756-D99F9DF8CC07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo18-04-OperacoesArray-Copy", "Exemplo18-04-OperacoesArray-Copy\Exemplo18-04-OperacoesArray-Copy.csproj", "{A9C2052D-D861-44F7-9756-D99F9DF8CC07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo18-05-OperacoesArray-Resize", "Exemplo18-05-OperacoesArray-Resize\Exemplo18-05-OperacoesArray-Resize.csproj", "{14BC24FB-D524-42B5-8E6B-E75C20779392}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo18-05-OperacoesArray-Resize", "Exemplo18-05-OperacoesArray-Resize\Exemplo18-05-OperacoesArray-Resize.csproj", "{14BC24FB-D524-42B5-8E6B-E75C20779392}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo18-06-OperacoesArray-Agregacao", "Exemplo18-06-OperacoesArray-Agregacao\Exemplo18-06-OperacoesArray-Agregacao.csproj", "{D34CECD6-523D-4223-BF9F-8BD6499948BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo18-06-OperacoesArray-Agregacao", "Exemplo18-06-OperacoesArray-Agregacao\Exemplo18-06-OperacoesArray-Agregacao.csproj", "{D34CECD6-523D-4223-BF9F-8BD6499948BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo19-01-OperacoesString-StringBuilder", "Exemplo19-01-OperacoesString-StringBuilder\Exemplo19-01-OperacoesString-StringBuilder.csproj", "{201F2D6D-5D4D-401E-8CE6-ACBB7203A672}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo19-01-OperacoesString-StringBuilder", "Exemplo19-01-OperacoesString-StringBuilder\Exemplo19-01-OperacoesString-StringBuilder.csproj", "{201F2D6D-5D4D-401E-8CE6-ACBB7203A672}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplos20-Lista", "Exemplos20-Lista\Exemplos20-Lista.csproj", "{1CBCD053-2A28-499C-BD92-DCCA8B35F125}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +155,10 @@ Global
 		{201F2D6D-5D4D-401E-8CE6-ACBB7203A672}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{201F2D6D-5D4D-401E-8CE6-ACBB7203A672}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{201F2D6D-5D4D-401E-8CE6-ACBB7203A672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CBCD053-2A28-499C-BD92-DCCA8B35F125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CBCD053-2A28-499C-BD92-DCCA8B35F125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CBCD053-2A28-499C-BD92-DCCA8B35F125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CBCD053-2A28-499C-BD92-DCCA8B35F125}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
