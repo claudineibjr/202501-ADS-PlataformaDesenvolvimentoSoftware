@@ -4,7 +4,7 @@
     {
         static double LerNota()
         {
-            Console.Write("Digita a nota: ");
+            Console.Write("Digite a nota: ");
             double nota = Convert.ToDouble(Console.ReadLine());
 
             if (nota < 0 || nota > 10)
