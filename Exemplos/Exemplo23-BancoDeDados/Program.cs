@@ -1,10 +1,16 @@
-﻿public class Program
-{
+﻿using System.Security.Cryptography.X509Certificates;
+using Exemplo23_BancoDeDados;
+using Microsoft.EntityFrameworkCore;
 
-  static List<Pessoa> pessoas = [];
+public class Program
+{
+  static PessoasDbContext dbContext = new PessoasDbContext();
+  static DbSet<Pessoa> pessoas = dbContext.Pessoas;
 
   static void Main(string[] args)
   {
+    
+
     bool sair = false;
 
     while (!sair)
@@ -77,6 +83,8 @@
     Pessoa pessoa = new Pessoa(nome, idade, empregos);
     pessoas.Add(pessoa);
 
+    dbContext.SaveChanges();
+
     Console.WriteLine("Pessoa cadastrada com sucesso!");
   }
 
@@ -84,7 +92,9 @@
   {
     Console.WriteLine("\n--- Lista de Pessoas (Ordenado por Nome) ---");
 
-    foreach (Pessoa pessoa in pessoas.OrderBy(p => p.Nome))
+    var pessoasOrdenadasPeloNome = pessoas.ToList().OrderByDescending(p => p.Nome);
+
+    foreach (Pessoa pessoa in pessoasOrdenadasPeloNome)
     {
       Console.WriteLine(pessoa.Info);
     }
@@ -94,7 +104,9 @@
   {
     Console.WriteLine("\n--- Lista de Pessoas (Ordenado por Salário Total) ---");
 
-    foreach (Pessoa pessoa in pessoas.OrderByDescending(p => p.SalarioTotal))
+    var pessoasOrdenadasPeloSalario = pessoas.Include(p => p.Empregos).ToList().OrderByDescending(p => p.SalarioTotal);
+
+    foreach (Pessoa pessoa in pessoasOrdenadasPeloSalario)
     {
       Console.WriteLine(pessoa.Info);
     }
@@ -117,6 +129,8 @@
     {
       Console.WriteLine("Pessoa não encontrada.");
     }
+
+    dbContext.SaveChanges();
   }
 
   static void Seed()
@@ -167,5 +181,7 @@
     pessoas.Add(pessoa8);
     pessoas.Add(pessoa9);
     pessoas.Add(pessoa10);
+
+    dbContext.SaveChanges();
   }
 }

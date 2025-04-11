@@ -9,7 +9,7 @@ public class Pessoa
   public string Id { get; set; }
   public string Nome { get; set; }
   public int Idade { get; set; }
-  public List<Emprego> Empregos { get; set; }
+  public List<Emprego> Empregos { get; set; } = new List<Emprego>();
 
   public decimal SalarioTotal
   {
