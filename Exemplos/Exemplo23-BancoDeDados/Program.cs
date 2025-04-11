@@ -92,7 +92,7 @@ public class Program
   {
     Console.WriteLine("\n--- Lista de Pessoas (Ordenado por Nome) ---");
 
-    var pessoasOrdenadasPeloNome = pessoas.ToList().OrderByDescending(p => p.Nome);
+    var pessoasOrdenadasPeloNome = pessoas.Include(p => p.Empregos).ToList().OrderByDescending(p => p.Nome);
 
     foreach (Pessoa pessoa in pessoasOrdenadasPeloNome)
     {
