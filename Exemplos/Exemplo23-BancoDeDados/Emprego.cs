@@ -1,5 +1,11 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 public class Emprego
 {
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Key]
+    public string Id {get; set;}
     public string Empresa { get; set; }
     public string Cargo { get; set; }
     public decimal Salario { get; set; }
@@ -9,4 +15,6 @@ public class Emprego
       this.Cargo = Cargo;
       this.Salario = Salario;
     }
+
+    private Emprego() { }
 }

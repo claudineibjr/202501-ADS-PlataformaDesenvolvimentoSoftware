@@ -1,9 +1,14 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 
 public class Pessoa
 {
-  public string Nome;
-  public int Idade;
+  [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+  [Key]
+  public string Id { get; set; }
+  public string Nome { get; set; }
+  public int Idade { get; set; }
   public List<Emprego> Empregos { get; set; }
 
   public decimal SalarioTotal
@@ -35,4 +40,6 @@ public class Pessoa
     this.Idade = idade;
     this.Empregos = empregos;
   }
+
+  private Pessoa() { }
 }
