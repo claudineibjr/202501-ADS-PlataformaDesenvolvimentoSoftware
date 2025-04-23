@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace ConsoleApp8.Migrations
+namespace Exemplo230BancoDeDados.Migrations
 {
     [DbContext(typeof(PessoasDbContext))]
-    [Migration("20250423010320_NewProfissaoFieldOnPessoaTable")]
-    partial class NewProfissaoFieldOnPessoaTable
+    [Migration("20250423012244_MigracaoInicial")]
+    partial class MigracaoInicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,6 +26,29 @@ namespace ConsoleApp8.Migrations
             MySqlModelBuilderExtensions.HasCharSet(modelBuilder, "utf8mb4");
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("ConsoleApp8.Endereco", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Cidade")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Logradouro")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Numero")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Enderecos");
+                });
+
             modelBuilder.Entity("ConsoleApp8.Pessoa", b =>
                 {
                     b.Property<string>("Id")
@@ -35,6 +58,10 @@ namespace ConsoleApp8.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<string>("EnderecoId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
 
                     b.Property<int>("Idade")
                         .HasColumnType("int");
@@ -49,7 +76,20 @@ namespace ConsoleApp8.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("EnderecoId");
+
                     b.ToTable("Pessoas");
+                });
+
+            modelBuilder.Entity("ConsoleApp8.Pessoa", b =>
+                {
+                    b.HasOne("ConsoleApp8.Endereco", "Endereco")
+                        .WithMany()
+                        .HasForeignKey("EnderecoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Endereco");
                 });
 #pragma warning restore 612, 618
         }

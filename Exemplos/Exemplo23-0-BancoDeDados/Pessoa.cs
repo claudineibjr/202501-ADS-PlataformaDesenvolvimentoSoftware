@@ -13,13 +13,15 @@ namespace ConsoleApp8
         public int Idade { get; set; }
         public string Email { get; set; }
         public string Profissao { get; set; }
+        public Endereco Endereco { get; set; }
 
-        public Pessoa(string nome, int idade, string email, string profissao)
+        public Pessoa(string nome, int idade, string email, string profissao, Endereco endereco)
         {
             this.Nome = nome;
             this.Idade = idade;
             this.Email = email;
             this.Profissao = profissao;
+            this.Endereco = endereco;
         }
 
         private Pessoa()
