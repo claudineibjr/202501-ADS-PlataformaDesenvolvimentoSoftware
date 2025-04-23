@@ -3,6 +3,7 @@ using ConsoleApp8;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ConsoleApp8.Migrations
 {
     [DbContext(typeof(PessoasDbContext))]
-    partial class PessoasDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250423010320_NewProfissaoFieldOnPessoaTable")]
+    partial class NewProfissaoFieldOnPessoaTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -3,6 +3,7 @@ using ConsoleApp8;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ConsoleApp8.Migrations
 {
     [DbContext(typeof(PessoasDbContext))]
-    partial class PessoasDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250423005916_NewEmailFieldOnPessoaTable")]
+    partial class NewEmailFieldOnPessoaTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,10 +40,6 @@ namespace ConsoleApp8.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Profissao")
                         .IsRequired()
                         .HasColumnType("longtext");
 

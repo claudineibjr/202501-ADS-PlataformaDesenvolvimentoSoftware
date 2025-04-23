@@ -11,9 +11,13 @@
             IEnumerable<Pessoa> pessoasOrdenadasPorIdade = db.Pessoas
                 .OrderByDescending(p => p.Idade)
                 .Where(p => p.Idade >= idadeMinima);
+
             foreach (Pessoa pessoa in pessoasOrdenadasPorIdade)
             {
-                Console.WriteLine($"{pessoa.Nome} ({pessoa.Idade})");
+                Console.WriteLine($"{pessoa.Nome} - " +
+                    $"{pessoa.Idade} anos - " +
+                    $"Profissão: {pessoa.Profissao} - " +
+                    $"Email: {pessoa.Email}");
             }
         }
 
@@ -25,7 +29,13 @@
             Console.Write("Digite a idade: ");
             int idade = Convert.ToInt32(Console.ReadLine());
 
-            Pessoa novaPessoa = new Pessoa(nome, idade);
+            Console.Write("Digite o email: ");
+            string email = Console.ReadLine();
+
+            Console.Write("Digite a profissão: ");
+            string profissao = Console.ReadLine();
+
+            Pessoa novaPessoa = new Pessoa(nome, idade, email, profissao);
 
             db.Pessoas.Add(novaPessoa);
             db.SaveChanges();

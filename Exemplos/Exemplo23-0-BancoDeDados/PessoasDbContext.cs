@@ -8,6 +8,7 @@ namespace ConsoleApp8;
 public partial class PessoasDbContext : DbContext
 {
     public DbSet<Pessoa> Pessoas { get; set; }
+
     public PessoasDbContext()
     {
     }
