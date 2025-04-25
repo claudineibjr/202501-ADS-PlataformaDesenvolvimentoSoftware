@@ -16,7 +16,6 @@
             {
                 Console.WriteLine($"{pessoa.Nome} - " +
                     $"{pessoa.Idade} anos - " +
-                    $"Profissão: {pessoa.Profissao} - " +
                     $"Email: {pessoa.Email} - ");
             }
         }
