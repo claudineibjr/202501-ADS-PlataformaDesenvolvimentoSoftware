@@ -32,10 +32,7 @@
             Console.Write("Digite o email: ");
             string email = Console.ReadLine();
 
-            Console.Write("Digite a profissão: ");
-            string profissao = Console.ReadLine();
-
-            Pessoa novaPessoa = new Pessoa(nome, idade, email, profissao);
+            Pessoa novaPessoa = new Pessoa(nome, idade, email);
 
             pessoas.Add(novaPessoa);
         }
