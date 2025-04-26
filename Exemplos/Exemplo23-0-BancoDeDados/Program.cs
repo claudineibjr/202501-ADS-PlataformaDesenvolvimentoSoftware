@@ -1,14 +1,14 @@
-﻿namespace ConsoleApp8
+﻿namespace Exemplo230BancoDeDados
 {
     internal class Program
     {
 
-        static List<Pessoa> pessoas = new List<Pessoa>();
+        static PessoasDbContext db = new PessoasDbContext();
 
         static void ExibirPessoas(int idadeMinima)
         {
             Console.WriteLine("Pessoas: ");
-            IEnumerable<Pessoa> pessoasOrdenadasPorIdade = pessoas
+            IEnumerable<Pessoa> pessoasOrdenadasPorIdade = db.Pessoas
                 .OrderByDescending(p => p.Idade)
                 .Where(p => p.Idade >= idadeMinima);
 
@@ -33,7 +33,8 @@
 
             Pessoa novaPessoa = new Pessoa(nome, idade, email);
 
-            pessoas.Add(novaPessoa);
+            db.Pessoas.Add(novaPessoa);
+            db.SaveChanges();
         }
         static void Main(string[] args)
         {
