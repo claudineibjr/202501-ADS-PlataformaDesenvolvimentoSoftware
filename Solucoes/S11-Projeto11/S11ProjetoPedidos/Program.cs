@@ -5,7 +5,7 @@ namespace S11ProjetoPedidos;
 public class Program
 {
 
-  static List<Produto> produtos = new List<Produto>();
+  static PedidosManagerDbContext db = new PedidosManagerDbContext();
 
   static void CadastrarProduto() {
     Console.WriteLine("Cadastro de produto: ");
@@ -18,13 +18,14 @@ public class Program
 
     Produto novoProduto = new Produto(nome, preco);
 
-    produtos.Add(novoProduto);
+    db.Produtos.Add(novoProduto);
+    db.SaveChanges();
   }
 
   static void ListarProdutos() {
     Console.WriteLine("Produtos: ");
 
-    foreach (Produto produto in produtos.OrderBy(p => p.Nome)) {
+    foreach (Produto produto in db.Produtos.OrderBy(p => p.Nome)) {
       Console.WriteLine($"{produto.Nome} {produto.Preco.ToString("C", CultureInfo.GetCultureInfo("pt-BR"))}");
     }
   }
