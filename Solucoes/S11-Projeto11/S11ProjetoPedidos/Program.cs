@@ -7,7 +7,6 @@ public class Program
 {
 
   static PedidosManagerDbContext db = new PedidosManagerDbContext();
-  static List<Cliente> clientes = new List<Cliente>();
 
   static void CadastrarProduto() {
     Console.WriteLine("Cadastro de produto: ");
@@ -69,20 +68,21 @@ static void CadastrarCliente() {
     Console.Write("CPF: ");
     string cpf = Console.ReadLine();
 
-    bool existeClienteComMesmoCPF = clientes.Any(cliente => cliente.CPF.ToUpper() == cpf.ToUpper());
+    bool existeClienteComMesmoCPF = db.Clientes.Any(cliente => cliente.CPF.ToUpper() == cpf.ToUpper());
     if (existeClienteComMesmoCPF) {
       throw new Exception($"Já existe um cliente com este CPF {cpf}");
     }
 
     Cliente novoCliente = new Cliente(nome, cpf);
 
-    clientes.Add(novoCliente);
+    db.Clientes.Add(novoCliente);
+    db.SaveChanges();
   }
 
   static void ListarClientes() {
     Console.WriteLine("Clientes: ");
 
-    foreach (Cliente cliente in clientes.OrderBy(p => p.Nome)) {
+    foreach (Cliente cliente in db.Clientes.OrderBy(p => p.Nome)) {
       Console.WriteLine($"{cliente.Nome} {cliente.CPF}");
     }
   }
