@@ -8,6 +8,8 @@ namespace Exemplo230BancoDeDados;
 public partial class PessoasDbContext : DbContext
 {
     public DbSet<Pessoa> Pessoas { get; set; }
+    public DbSet<Emprego> Empregos { get; set; }
+
     public PessoasDbContext()
     {
     }

@@ -31,11 +31,28 @@
             Console.Write("Digite o email: ");
             string email = Console.ReadLine();
 
-            Pessoa novaPessoa = new Pessoa(nome, idade, email);
+            Console.Write("Digite o endereço: ");
+            string endereco = Console.ReadLine();
+
+            Emprego novoEmprego = LerEmprego();
+
+            Pessoa novaPessoa = new Pessoa(nome, idade, email, endereco, novoEmprego);
 
             db.Pessoas.Add(novaPessoa);
             db.SaveChanges();
         }
+
+        static Emprego LerEmprego()
+        {
+            Console.Write("Digite a profissão: ");
+            string profissao = Console.ReadLine();
+
+            Console.Write("Digite o salário: ");
+            decimal salario = Convert.ToDecimal(Console.ReadLine());
+
+            return new Emprego(profissao, salario);
+        }
+
         static void Main(string[] args)
         {
             CriarPessoa();

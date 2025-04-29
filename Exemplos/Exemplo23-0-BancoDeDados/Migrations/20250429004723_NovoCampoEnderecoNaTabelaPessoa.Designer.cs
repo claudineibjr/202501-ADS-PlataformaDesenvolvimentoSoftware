@@ -3,6 +3,7 @@ using Exemplo230BancoDeDados;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Exemplo230BancoDeDados.Migrations
 {
     [DbContext(typeof(PessoasDbContext))]
-    partial class PessoasDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250429004723_NovoCampoEnderecoNaTabelaPessoa")]
+    partial class NovoCampoEnderecoNaTabelaPessoa
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,24 +26,6 @@ namespace Exemplo230BancoDeDados.Migrations
             MySqlModelBuilderExtensions.HasCharSet(modelBuilder, "utf8mb4");
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("Exemplo230BancoDeDados.Emprego", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<string>("Profissao")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<decimal>("Salario")
-                        .HasColumnType("decimal(65,30)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Empregos");
-                });
-
             modelBuilder.Entity("Exemplo230BancoDeDados.Pessoa", b =>
                 {
                     b.Property<string>("Id")
@@ -50,9 +35,6 @@ namespace Exemplo230BancoDeDados.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<string>("EmpregoId")
-                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Endereco")
                         .IsRequired()
@@ -67,18 +49,7 @@ namespace Exemplo230BancoDeDados.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EmpregoId");
-
                     b.ToTable("Pessoas");
-                });
-
-            modelBuilder.Entity("Exemplo230BancoDeDados.Pessoa", b =>
-                {
-                    b.HasOne("Exemplo230BancoDeDados.Emprego", "Emprego")
-                        .WithMany()
-                        .HasForeignKey("EmpregoId");
-
-                    b.Navigation("Emprego");
                 });
 #pragma warning restore 612, 618
         }
