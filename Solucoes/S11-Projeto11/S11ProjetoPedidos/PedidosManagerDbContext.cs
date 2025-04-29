@@ -8,6 +8,8 @@ namespace S11ProjetoPedidos;
 public partial class PedidosManagerDbContext : DbContext
 {
     public DbSet<Produto> Produtos { get; set; }
+    public DbSet<Cliente> Clientes { get; set; }
+
     public PedidosManagerDbContext()
     {
     }
