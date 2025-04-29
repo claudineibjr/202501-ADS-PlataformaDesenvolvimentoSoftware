@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Security.Cryptography;
 
 namespace S11ProjetoPedidos;
 
@@ -68,6 +69,11 @@ static void CadastrarCliente() {
     Console.Write("CPF: ");
     string cpf = Console.ReadLine();
 
+    bool existeClienteComMesmoCPF = clientes.Any(cliente => cliente.CPF.ToUpper() == cpf.ToUpper());
+    if (existeClienteComMesmoCPF) {
+      throw new Exception($"Já existe um cliente com este CPF {cpf}");
+    }
+
     Cliente novoCliente = new Cliente(nome, cpf);
 
     clientes.Add(novoCliente);
@@ -98,7 +104,11 @@ static void CadastrarCliente() {
       switch (opcao)
       {
         case "1":
+        try {
           CadastrarCliente();
+        } catch (Exception ex) {
+          Console.WriteLine($"Erro ao cadastrar cliente\n{ex.Message}");
+        }
           break;
 
         case "2":
