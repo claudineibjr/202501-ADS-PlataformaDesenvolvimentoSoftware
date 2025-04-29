@@ -6,6 +6,7 @@ public class Program
 {
 
   static PedidosManagerDbContext db = new PedidosManagerDbContext();
+  static List<Cliente> clientes = new List<Cliente>();
 
   static void CadastrarProduto() {
     Console.WriteLine("Cadastro de produto: ");
@@ -58,12 +59,63 @@ public class Program
     } while (opcao != "0");
   }
 
+static void CadastrarCliente() {
+    Console.WriteLine("Cadastro de cliente: ");
+
+    Console.Write("Nome: ");
+    string nome = Console.ReadLine();
+
+    Console.Write("CPF: ");
+    string cpf = Console.ReadLine();
+
+    Cliente novoCliente = new Cliente(nome, cpf);
+
+    clientes.Add(novoCliente);
+  }
+
+  static void ListarClientes() {
+    Console.WriteLine("Clientes: ");
+
+    foreach (Cliente cliente in clientes.OrderBy(p => p.Nome)) {
+      Console.WriteLine($"{cliente.Nome} {cliente.CPF}");
+    }
+  }
+
+  static void MenuCliente() {
+    string opcao = "0";
+
+    string menu = @"
+  Menu Clientes
+    1 - Cadastrar
+    2 - Listar
+    0 - Sair";
+
+    do
+    {
+      Console.WriteLine(menu);
+      opcao = Console.ReadLine();
+
+      switch (opcao)
+      {
+        case "1":
+          CadastrarCliente();
+          break;
+
+        case "2":
+          ListarClientes();
+          break;
+      }
+
+    } while (opcao != "0");
+  }
+
   public static void Main(string[] args) {
     string opcao = "0";
 
     string menu = @"
 Menu Principal
-  1 - Produto
+  1 - Produtos
+  2 - Clientes
   0 - Sair";
 
     do
@@ -75,6 +127,10 @@ Menu Principal
       {
         case "1":
           MenuProduto();
+          break;
+
+        case "2":
+          MenuCliente();
           break;
       }
 
