@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace S11ProjetoPedidos.Migrations
+namespace S11ProjetoPedidos.Database.Migrations
 {
     /// <inheritdoc />
     public partial class PedidosTable : Migration

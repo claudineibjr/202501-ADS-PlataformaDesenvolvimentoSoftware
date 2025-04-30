@@ -8,7 +8,7 @@ using S11ProjetoPedidos;
 
 #nullable disable
 
-namespace S11ProjetoPedidos.Migrations
+namespace S11ProjetoPedidos.Database.Migrations
 {
     [DbContext(typeof(PedidosManagerDbContext))]
     [Migration("20250429233145_ProdutoTable")]

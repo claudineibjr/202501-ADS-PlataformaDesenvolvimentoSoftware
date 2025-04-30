@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
+using S11ProjetoPedidos.Model;
 
-namespace S11ProjetoPedidos;
+namespace S11ProjetoPedidos.Database;
 
 public partial class PedidosManagerDbContext : DbContext
 {

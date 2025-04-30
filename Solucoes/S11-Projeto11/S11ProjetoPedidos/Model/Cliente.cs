@@ -1,23 +1,21 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace S11ProjetoPedidos;
+namespace S11ProjetoPedidos.Model;
 
-public class Produto
+public class Cliente
 {
   [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
   [Key]
   public string Id { get; set; }
   public string Nome { get; set; }
-  public decimal Preco { get; set; }
-  public List<Pedido> pedidos { get; set; } = new();
+  public string CPF { get; set; }
 
-  public Produto(string nome, decimal preco)
+  public Cliente(string nome, string cpf)
   {
     this.Nome = nome;
-    this.Preco = preco;    
+    this.CPF = cpf;
   }
 
-  private Produto() { }
+  private Cliente() { }
 }

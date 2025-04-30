@@ -3,20 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using S11ProjetoPedidos;
 
 #nullable disable
 
-namespace S11ProjetoPedidos.Migrations
+namespace S11ProjetoPedidos.Database.Migrations
 {
     [DbContext(typeof(PedidosManagerDbContext))]
-    [Migration("20250430111431_PedidosTable")]
-    partial class PedidosTable
+    partial class PedidosManagerDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

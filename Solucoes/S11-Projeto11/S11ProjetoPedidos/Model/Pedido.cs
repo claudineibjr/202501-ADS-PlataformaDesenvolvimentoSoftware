@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace S11ProjetoPedidos;
+namespace S11ProjetoPedidos.Model;
 
 public class Pedido
 {
