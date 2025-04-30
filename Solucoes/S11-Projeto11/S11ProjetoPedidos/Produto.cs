@@ -11,6 +11,7 @@ public class Produto
   public string Id { get; set; }
   public string Nome { get; set; }
   public decimal Preco { get; set; }
+  public List<Pedido> pedidos { get; set; } = new();
 
   public Produto(string nome, decimal preco)
   {

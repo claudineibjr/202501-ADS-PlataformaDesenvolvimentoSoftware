@@ -7,7 +7,6 @@ public class Program
 {
 
   static PedidosManagerDbContext db = new PedidosManagerDbContext();
-  static List<Pedido> Pedidos = new List<Pedido>();
 
   static void CadastrarProduto() {
     Console.WriteLine("Cadastro de produto: ");
@@ -184,13 +183,15 @@ public class Program
     List<Produto> produtos = SelecionarProdutos();
 
     Pedido pedido = new Pedido(cliente, produtos);
-    Pedidos.Add(pedido);
+
+    db.Pedidos.Add(pedido);
+    db.SaveChanges();
   }
 
   static void ListarPedidos() {
     Console.WriteLine("Pedidos: ");
 
-    IEnumerable<Pedido> pedidosOrdenadosPorData = Pedidos.OrderByDescending(p => p.Data);
+    IEnumerable<Pedido> pedidosOrdenadosPorData = db.Pedidos.OrderByDescending(p => p.Data);
 
     for (int iCount = 0; iCount < pedidosOrdenadosPorData.Count(); iCount++) {
       Pedido pedido = pedidosOrdenadosPorData.ElementAt(iCount);

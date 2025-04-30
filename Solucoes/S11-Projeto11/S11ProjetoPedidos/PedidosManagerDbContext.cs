@@ -9,6 +9,7 @@ public partial class PedidosManagerDbContext : DbContext
 {
     public DbSet<Produto> Produtos { get; set; }
     public DbSet<Cliente> Clientes { get; set; }
+    public DbSet<Pedido> Pedidos { get; set; }
 
     public PedidosManagerDbContext()
     {
