@@ -7,6 +7,7 @@ public class Program
 {
 
   static PedidosManagerDbContext db = new PedidosManagerDbContext();
+  static List<Pedido> Pedidos = new List<Pedido>();
 
   static void CadastrarProduto() {
     Console.WriteLine("Cadastro de produto: ");
@@ -23,11 +24,17 @@ public class Program
     db.SaveChanges();
   }
 
-  static void ListarProdutos() {
-    Console.WriteLine("Produtos: ");
+  static void ListarProdutos(bool exibirTitulo = true) {
+    if (exibirTitulo) {
+      Console.WriteLine("Produtos: ");
+    }
+    
+    IEnumerable<Produto> produtosOrdenadosPorNome = db.Produtos.OrderBy(p => p.Nome);
 
-    foreach (Produto produto in db.Produtos.OrderBy(p => p.Nome)) {
-      Console.WriteLine($"{produto.Nome} {produto.Preco.ToString("C", CultureInfo.GetCultureInfo("pt-BR"))}");
+    for (int iCount = 0; iCount < produtosOrdenadosPorNome.Count(); iCount++) {
+      Produto produto = produtosOrdenadosPorNome.ElementAt(iCount);
+
+      Console.WriteLine($"{iCount + 1} - {produto.Nome} {produto.Preco.ToString("C", CultureInfo.GetCultureInfo("pt-BR"))}");
     }
   }
 
@@ -59,7 +66,7 @@ public class Program
     } while (opcao != "0");
   }
 
-static void CadastrarCliente() {
+  static void CadastrarCliente() {
     Console.WriteLine("Cadastro de cliente: ");
 
     Console.Write("Nome: ");
@@ -79,11 +86,17 @@ static void CadastrarCliente() {
     db.SaveChanges();
   }
 
-  static void ListarClientes() {
-    Console.WriteLine("Clientes: ");
+  static void ListarClientes(bool exibirTitulo = true) {
+    if (exibirTitulo) {
+      Console.WriteLine("Clientes: ");
+    }
 
-    foreach (Cliente cliente in db.Clientes.OrderBy(p => p.Nome)) {
-      Console.WriteLine($"{cliente.Nome} {cliente.CPF}");
+    IEnumerable<Cliente> clientesOrdenadosPorNome = db.Clientes.OrderBy(p => p.Nome);
+
+    for (int iCount = 0; iCount < clientesOrdenadosPorNome.Count(); iCount++) {
+      Cliente cliente = clientesOrdenadosPorNome.ElementAt(iCount);
+
+      Console.WriteLine($"{iCount + 1} - {cliente.Nome} {cliente.CPF}");
     }
   }
 
