@@ -2,6 +2,7 @@ using System;
 using S11ProjetoPedidos.Services;
 using S11ProjetoPedidos.Model;
 using System.Globalization;
+using Microsoft.EntityFrameworkCore;
 
 namespace S11ProjetoPedidos.Services;
 
@@ -58,7 +59,10 @@ public class PedidoService
   public static void ListarPedidos() {
     Console.WriteLine("Pedidos: ");
 
-    IEnumerable<Pedido> pedidosOrdenadosPorData = DatabaseService.db.Pedidos.OrderByDescending(p => p.Data);
+    IEnumerable<Pedido> pedidosOrdenadosPorData = DatabaseService.db.Pedidos
+      .Include(pedido => pedido.Produtos)
+      .Include(pedido => pedido.Cliente)
+      .OrderByDescending(p => p.Data);
 
     for (int iCount = 0; iCount < pedidosOrdenadosPorData.Count(); iCount++) {
       Pedido pedido = pedidosOrdenadosPorData.ElementAt(iCount);
