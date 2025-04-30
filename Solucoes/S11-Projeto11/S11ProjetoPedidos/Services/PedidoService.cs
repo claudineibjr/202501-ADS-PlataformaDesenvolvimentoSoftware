@@ -67,7 +67,7 @@ public class PedidoService
     for (int iCount = 0; iCount < pedidosOrdenadosPorData.Count(); iCount++) {
       Pedido pedido = pedidosOrdenadosPorData.ElementAt(iCount);
 
-      Console.WriteLine($"{iCount + 1} - {pedido.Cliente.Nome} {pedido.ValorTotal.ToString("C", CultureInfo.GetCultureInfo("pt-BR"))}");
+      Console.WriteLine($"{iCount + 1} - {pedido.Cliente.Nome} {pedido.ValorTotal.ToString("C", CultureInfo.GetCultureInfo("pt-BR"))} ({pedido.Data.ToString(CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat)})");
     }
   }
 }

@@ -22,6 +22,7 @@ public class Pedido
   {
     this.Cliente = cliente;
     this.Produtos = produtos;
+    this.Data = DateOnly.FromDateTime(DateTime.Now);
   }
 
   private Pedido() { }
