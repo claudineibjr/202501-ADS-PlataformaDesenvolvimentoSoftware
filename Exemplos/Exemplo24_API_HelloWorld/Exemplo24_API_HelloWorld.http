@@ -1,0 +1,6 @@
+@Exemplo24_API_HelloWorld_HostAddress = http://localhost:5259
+
+GET {{Exemplo24_API_HelloWorld_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
