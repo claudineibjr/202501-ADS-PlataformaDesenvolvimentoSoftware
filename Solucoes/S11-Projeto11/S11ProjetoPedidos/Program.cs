@@ -16,6 +16,7 @@ public class Program
   Menu Produtos
     1 - Cadastrar
     2 - Listar
+    3 - Pesquisar produtos
     0 - Sair";
 
     do
@@ -32,6 +33,10 @@ public class Program
         case "2":
           ProdutoService.ListarProdutos();
           break;
+
+        case "3":
+          ProdutoService.PesquisarProdutos();
+          break;
       }
 
     } while (opcao != "0");
@@ -44,6 +49,7 @@ public class Program
   Menu Clientes
     1 - Cadastrar
     2 - Listar
+    3 - Pesquisar clientes
     0 - Sair";
 
     do
@@ -64,6 +70,10 @@ public class Program
         case "2":
           ClienteService.ListarClientes();
           break;
+
+        case "3":
+          ClienteService.PesquisarClientes();
+          break;
       }
 
     } while (opcao != "0");
@@ -76,6 +86,7 @@ public class Program
   Menu Pedidos
     1 - Cadastrar
     2 - Listar
+    3 - Listar pedidos por cliente
     0 - Sair";
 
     do
@@ -91,6 +102,10 @@ public class Program
 
         case "2":
           PedidoService.ListarPedidos();
+          break;
+
+        case "3":
+          PedidoService.ListarPedidosPorCliente();
           break;
       }
 

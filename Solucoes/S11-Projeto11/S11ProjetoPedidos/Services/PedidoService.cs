@@ -56,16 +56,35 @@ public class PedidoService
     DatabaseService.db.SaveChanges();
   }
 
-  public static void ListarPedidos() {
-    Console.WriteLine("Pedidos: ");
+  private static IEnumerable<Pedido> GetPedidos(Cliente? clienteABuscar = null) {
+    IQueryable<Pedido> pedidos = DatabaseService
+      .db
+      .Pedidos
+      .AsQueryable();
 
-    IEnumerable<Pedido> pedidosOrdenadosPorData = DatabaseService.db.Pedidos
+    if (clienteABuscar != null) {
+      pedidos = pedidos.Where(pedido => pedido.Cliente.Id == clienteABuscar.Id);
+    }
+
+    return pedidos
       .Include(pedido => pedido.Produtos)
       .Include(pedido => pedido.Cliente)
-      .OrderByDescending(p => p.Data);
+      .OrderByDescending(p => p.Data);;
+  }
 
-    for (int iCount = 0; iCount < pedidosOrdenadosPorData.Count(); iCount++) {
-      Pedido pedido = pedidosOrdenadosPorData.ElementAt(iCount);
+  public static void ListarPedidosPorCliente() {
+    Cliente cliente = SelecionarCliente();
+
+    ListarPedidos(clienteABuscar: cliente);
+  }
+
+  public static void ListarPedidos(Cliente? clienteABuscar = null) {
+    Console.WriteLine("Pedidos: ");
+
+    IEnumerable<Pedido> pedidos = GetPedidos(clienteABuscar);    
+
+    for (int iCount = 0; iCount < pedidos.Count(); iCount++) {
+      Pedido pedido = pedidos.ElementAt(iCount);
 
       Console.WriteLine($"{iCount + 1} - {pedido.Cliente.Nome} {pedido.ValorTotal.ToString("C", CultureInfo.GetCultureInfo("pt-BR"))} ({pedido.Data.ToString(CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat)})");
     }

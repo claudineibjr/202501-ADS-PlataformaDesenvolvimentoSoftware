@@ -2,6 +2,7 @@ using System;
 using S11ProjetoPedidos.Model;
 using S11ProjetoPedidos.Database;
 using System.Globalization;
+using Microsoft.EntityFrameworkCore;
 
 namespace S11ProjetoPedidos.Services;
 
@@ -23,18 +24,33 @@ public class ProdutoService
     DatabaseService.db.SaveChanges();
   }
 
-  public static IEnumerable<Produto> GetProdutos() {
-    IEnumerable<Produto> produtosOrdenadosPorNome = DatabaseService.db.Produtos.OrderBy(p => p.Nome);
+  public static IEnumerable<Produto> GetProdutos(string? nomeProdutoABuscar = null) {
+    IQueryable<Produto> produtos = DatabaseService
+      .db
+      .Produtos.AsQueryable();
+    if (nomeProdutoABuscar != null) {
+      produtos = produtos
+        .Where(
+          produto => produto.Nome.ToUpper().Contains(nomeProdutoABuscar.ToUpper())
+        );
+    }
 
-    return produtosOrdenadosPorNome;
+    return produtos.OrderBy(produto => produto.Nome);
   }
 
-  public static void ListarProdutos(bool exibirTitulo = true) {
+  public static void PesquisarProdutos() {
+    Console.Write("Nome: ");
+    string nome = Console.ReadLine();
+
+    ListarProdutos(nomeProdutoABuscar: nome);
+  }
+
+  public static void ListarProdutos(bool exibirTitulo = true, string? nomeProdutoABuscar = null) {
     if (exibirTitulo) {
       Console.WriteLine("Produtos: ");
     }
     
-    IEnumerable<Produto> produtos = GetProdutos();    
+    IEnumerable<Produto> produtos = GetProdutos(nomeProdutoABuscar);
 
     for (int iCount = 0; iCount < produtos.Count(); iCount++) {
       Produto produto = produtos.ElementAt(iCount);

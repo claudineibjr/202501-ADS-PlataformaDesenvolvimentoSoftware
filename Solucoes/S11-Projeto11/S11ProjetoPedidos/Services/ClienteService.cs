@@ -26,16 +26,34 @@ public class ClienteService
     DatabaseService.db.SaveChanges();
   }
 
-  public static IEnumerable<Cliente> GetClientes() {
-    return DatabaseService.db.Clientes.OrderBy(p => p.Nome);
+  public static IEnumerable<Cliente> GetClientes(string? nomeClienteABuscar = null) {
+    IQueryable<Cliente> clientes = DatabaseService
+      .db
+      .Clientes.AsQueryable();
+
+    if (nomeClienteABuscar != null) {
+      clientes = clientes
+        .Where(
+          cliente => cliente.Nome.ToUpper().Contains(nomeClienteABuscar.ToUpper())
+        );
+    }
+
+    return clientes.OrderBy(p => p.Nome);
   }
 
-  public static void ListarClientes(bool exibirTitulo = true) {
+  public static void PesquisarClientes() {
+    Console.Write("Nome: ");
+    string nome = Console.ReadLine();
+
+    ListarClientes(nomeClienteABuscar: nome);
+  }
+
+  public static void ListarClientes(bool exibirTitulo = true, string? nomeClienteABuscar = null) {
     if (exibirTitulo) {
       Console.WriteLine("Clientes: ");
     }
 
-    IEnumerable<Cliente> clientes = GetClientes();
+    IEnumerable<Cliente> clientes = GetClientes(nomeClienteABuscar);
     for (int iCount = 0; iCount < clientes.Count(); iCount++) {
       Cliente cliente = clientes.ElementAt(iCount);
 
