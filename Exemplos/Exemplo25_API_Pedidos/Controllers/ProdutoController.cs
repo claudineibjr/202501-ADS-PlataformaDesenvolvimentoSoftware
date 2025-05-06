@@ -1,4 +1,5 @@
 using Exemplo25_API_Pedidos.Database;
+using Exemplo25_API_Pedidos.DTO;
 using Exemplo25_API_Pedidos.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -40,6 +41,20 @@ namespace Exemplo25_API_Pedidos.Controllers
         }
 
         return Ok(produto);
+      }
+
+      [HttpPost]
+      public ActionResult<Produto> CreateProduto(ProdutoDTO produtoDTO) {
+        if (!ModelState.IsValid) {
+          return BadRequest();
+        }
+
+        Produto novoProduto = new Produto(produtoDTO.Nome, produtoDTO.Preco);
+
+        dbContext.Produtos.Add(novoProduto);
+        dbContext.SaveChanges();
+
+        return CreatedAtAction(nameof(CreateProduto), novoProduto);
       }
     }
 }
