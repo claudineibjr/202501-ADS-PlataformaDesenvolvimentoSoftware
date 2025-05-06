@@ -61,6 +61,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exemplo23-0-BancoDeDados", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo24_API_HelloWorld", "Exemplo24_API_HelloWorld\Exemplo24_API_HelloWorld.csproj", "{15C2E48B-2D76-4AD3-B0E2-2DE972C5844E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo25_API_Pedidos", "Exemplo25_API_Pedidos\Exemplo25_API_Pedidos.csproj", "{989F79F5-D4E3-46AE-8DFC-A08AA150B036}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -183,6 +185,10 @@ Global
 		{15C2E48B-2D76-4AD3-B0E2-2DE972C5844E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15C2E48B-2D76-4AD3-B0E2-2DE972C5844E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15C2E48B-2D76-4AD3-B0E2-2DE972C5844E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{989F79F5-D4E3-46AE-8DFC-A08AA150B036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989F79F5-D4E3-46AE-8DFC-A08AA150B036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989F79F5-D4E3-46AE-8DFC-A08AA150B036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989F79F5-D4E3-46AE-8DFC-A08AA150B036}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

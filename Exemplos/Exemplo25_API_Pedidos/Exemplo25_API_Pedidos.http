@@ -1,0 +1,6 @@
+@Exemplo25_API_Pedidos_HostAddress = http://localhost:5074
+
+GET {{Exemplo25_API_Pedidos_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
