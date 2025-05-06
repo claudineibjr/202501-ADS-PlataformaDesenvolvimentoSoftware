@@ -18,11 +18,18 @@ namespace Exemplo25_API_Pedidos.Controllers
       }
 
       [HttpGet]
-      public ActionResult<IEnumerable<Produto>> GetProdutos() {
+      public ActionResult<IEnumerable<Produto>> GetProdutos([FromQuery] string? nome) {
         IQueryable<Produto> produtos = 
           dbContext
           .Produtos
           .AsQueryable();
+
+        if (!String.IsNullOrEmpty(nome)) {
+          produtos = produtos
+            .Where(
+              produto => produto.Nome.ToUpper().Contains(nome.ToUpper())
+            );
+        }
 
         produtos = produtos.OrderBy(produto => produto.Nome);
 
