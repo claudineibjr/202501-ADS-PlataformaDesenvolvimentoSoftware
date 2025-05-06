@@ -86,5 +86,22 @@ namespace Exemplo25_API_Pedidos.Controllers
 
         return NoContent();
       }
+
+      [HttpDelete("id")]
+      public IActionResult DeleteProduto(string id) {
+        Produto? produto = 
+          dbContext
+          .Produtos
+          .FirstOrDefault(produto => produto.Id == id);
+
+        if (produto == null) {
+          return NotFound();
+        }
+
+        dbContext.Produtos.Remove(produto);
+        dbContext.SaveChanges();
+
+        return NoContent();
+      }
     }
 }
