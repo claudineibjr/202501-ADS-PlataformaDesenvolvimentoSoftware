@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Exemplo25_API_Pedidos.Model;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
 
@@ -7,6 +8,8 @@ namespace Exemplo25_API_Pedidos.Database;
 
 public partial class PedidosManagerDbContext : DbContext
 {
+    public DbSet<Produto> Produtos { get; set; }
+
     public PedidosManagerDbContext()
     {
     }
