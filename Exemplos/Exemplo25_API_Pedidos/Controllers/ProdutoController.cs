@@ -27,5 +27,19 @@ namespace Exemplo25_API_Pedidos.Controllers
 
         return Ok(produtos);
       }
+
+      [HttpGet("Id")]
+      public ActionResult<IEnumerable<Produto>> GetProduto(string Id) {
+        Produto? produto = 
+          dbContext
+          .Produtos
+          .FirstOrDefault(produto => produto.Id == Id);
+
+        if (produto == null) {
+          return NotFound();
+        }
+
+        return Ok(produto);
+      }
     }
 }
