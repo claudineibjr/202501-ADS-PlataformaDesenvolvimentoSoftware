@@ -36,12 +36,12 @@ namespace Exemplo25_API_Pedidos.Controllers
         return Ok(produtos);
       }
 
-      [HttpGet("Id")]
-      public ActionResult<IEnumerable<Produto>> GetProduto(string Id) {
+      [HttpGet("id")]
+      public ActionResult<IEnumerable<Produto>> GetProduto(string id) {
         Produto? produto = 
           dbContext
           .Produtos
-          .FirstOrDefault(produto => produto.Id == Id);
+          .FirstOrDefault(produto => produto.Id == id);
 
         if (produto == null) {
           return NotFound();
@@ -62,6 +62,29 @@ namespace Exemplo25_API_Pedidos.Controllers
         dbContext.SaveChanges();
 
         return CreatedAtAction(nameof(CreateProduto), novoProduto);
+      }
+      
+      [HttpPut("id")]
+      public IActionResult UpdateProduto(string id, ProdutoDTO produtoDTO) {
+        if (!ModelState.IsValid) {
+          return BadRequest();
+        }
+
+        Produto? produto = 
+          dbContext
+          .Produtos
+          .FirstOrDefault(produto => produto.Id == id);
+
+        if (produto == null) {
+          return NotFound();
+        }
+
+        produto.Nome = produtoDTO.Nome;
+        produto.Preco = produtoDTO.Preco;
+
+        dbContext.SaveChanges();
+
+        return NoContent();
       }
     }
 }
