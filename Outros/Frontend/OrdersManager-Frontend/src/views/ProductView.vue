@@ -3,6 +3,7 @@ import api from '@/api';
 import { onMounted, ref } from 'vue';
 import type { ProductType } from '@/models/Product';
 import { formatCurrency } from '@/utils/formatCurrency';
+import router, { routes } from '@/router';
 
 type ProductViewProps = {
   id: string;
@@ -33,6 +34,29 @@ async function loadProduct() {
   }
 }
 
+async function deleteProduct() {
+  if (confirm("Confirma a exclusão do produto?")) {
+    console.log('Deletado produto...');
+
+    try {
+      isLoadingProduct.value = true;
+      await api.delete(`/Produtos/${productId}`);
+
+      router.push(routes.products);
+    } catch (error) {
+      alert("Falha ao deletar produto");
+
+      console.error({ error }, 'Falha ao deletar produto');
+    } finally {
+      isLoadingProduct.value = false;
+    }
+  }
+}
+
+function navigateToProductEdit() {
+  router.push(`${routes.product}/${productId}/atualizar`);
+}
+
 onMounted(() => {
   loadProduct();
 });
@@ -57,6 +81,9 @@ onMounted(() => {
       <div>
         Valor: {{ formatCurrency(product!.preco) }}
       </div>
+
+      <button @click="navigateToProductEdit">Editar produto</button>
+      <button @click="deleteProduct">Excluir produto</button>
     </div>
   </div>
   

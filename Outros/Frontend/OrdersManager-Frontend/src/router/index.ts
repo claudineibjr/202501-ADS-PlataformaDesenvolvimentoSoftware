@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ProductView from '@/views/ProductView.vue';
 import ProductsView from '@/views/ProductsView.vue';
 import ProductCreateView from '@/views/ProductCreateView.vue';
+import ProductUpdateView from '@/views/ProductUpdateView.vue';
 
 export const routes = {
   products: '/produtos',
@@ -28,6 +29,12 @@ const router = createRouter({
       path: routes.createProduct,
       name: routes.createProduct,
       component: ProductCreateView,
+      props: true,
+    },
+    {
+      path: `${routes.product}/:id/atualizar`,
+      name: 'Update product',
+      component: ProductUpdateView,
       props: true,
     },
   ]

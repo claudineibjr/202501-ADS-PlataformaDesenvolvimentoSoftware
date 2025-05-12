@@ -10,7 +10,7 @@ const preco = ref(0);
 const router = useRouter();
 
 async function createProduct() {
-  console.log('Cadastando produto...');
+  console.log('Cadastrando produto...');
 
   try {
     await api.post('/Produtos', {
