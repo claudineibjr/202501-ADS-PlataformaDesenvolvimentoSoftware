@@ -72,5 +72,21 @@ namespace WebApplication1.Controllers
             return NoContent();
 
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteProduto(string id) {
+            Produto? produtoEncontrado =
+                produtos
+                .FirstOrDefault(p => p.Id == id);
+
+            if (produtoEncontrado == null)
+            {
+                return NotFound();
+            }
+
+            produtos.Remove(produtoEncontrado);
+
+            return NoContent();
+        }
     }
 }
