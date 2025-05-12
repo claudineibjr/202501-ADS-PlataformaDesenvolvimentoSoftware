@@ -31,6 +31,10 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult<Produto> CreateProduto(Produto novoProduto)
         {
+            if (string.IsNullOrEmpty(novoProduto.Id)) {
+              novoProduto.Id = $"p{produtos.Count + 1}";
+            }
+
             produtos.Add(novoProduto);
 
             return CreatedAtAction(nameof(CreateProduto), novoProduto);
