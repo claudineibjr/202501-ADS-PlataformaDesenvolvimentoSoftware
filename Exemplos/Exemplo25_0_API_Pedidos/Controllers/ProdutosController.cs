@@ -36,6 +36,20 @@ namespace WebApplication1.Controllers
             return CreatedAtAction(nameof(CreateProduto), novoProduto);
         }
 
+        [HttpPost("seed")]
+        public IActionResult Seed()
+        {
+            produtos.AddRange([
+              new Produto("Café", 35) { Id = "p1" },
+              new Produto("Água", 12) { Id = "p2" },
+              new Produto("Leite", 7) { Id = "p3" },
+              new Produto("Fralda", 80) { Id = "p4" },
+              new Produto("Desinfetante", 15) { Id = "p5" },
+            ]);
+
+            return NoContent();
+        }
+
         [HttpPut("{id}")]
         public IActionResult UpdateProduto(string id, Produto produtoAAtualizar)
         {
