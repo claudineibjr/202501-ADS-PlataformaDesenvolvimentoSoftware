@@ -16,7 +16,7 @@ namespace WebApplication1.Controllers
             return Ok(produtos);
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public ActionResult<IEnumerable<Produto>> GetProduto(string id)
         {
             Produto? produto = produtos.FirstOrDefault(p => p.Id == id);
@@ -36,7 +36,7 @@ namespace WebApplication1.Controllers
             return CreatedAtAction(nameof(CreateProduto), novoProduto);
         }
 
-        [HttpPut("id")]
+        [HttpPut("{id}")]
         public IActionResult UpdateProduto(string id, Produto produtoAAtualizar)
         {
             Produto? produtoEncontrado =
