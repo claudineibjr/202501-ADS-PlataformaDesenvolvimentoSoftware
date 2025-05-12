@@ -16,6 +16,18 @@ namespace WebApplication1.Controllers
             return Ok(produtos);
         }
 
+        [HttpGet("id")]
+        public ActionResult<IEnumerable<Produto>> GetProduto(string id)
+        {
+            Produto? produto = produtos.FirstOrDefault(p => p.Id == id);
+
+            if (produto is null) {
+              return NotFound();
+            }
+
+            return Ok(produto);
+        }
+
         [HttpPost]
         public ActionResult<Produto> CreateProduto(Produto novoProduto)
         {
