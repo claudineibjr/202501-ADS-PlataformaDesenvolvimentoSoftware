@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Exemplo25_0_API_Pedidos.Database;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Model;
 
@@ -8,18 +9,25 @@ namespace WebApplication1.Controllers
     [ApiController]
     public class ProdutosController : ControllerBase
     {
-        private static List<Produto> produtos = new List<Produto>();
+        private readonly PedidosDbContext dbContext;
+
+        public ProdutosController(PedidosDbContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
 
         [HttpGet]
         public ActionResult<IEnumerable<Produto>> GetProdutos()
         {
-            return Ok(produtos);
+            return Ok(dbContext.Produtos);
         }
 
         [HttpGet("{id}")]
         public ActionResult<IEnumerable<Produto>> GetProduto(string id)
         {
-            Produto? produto = produtos.FirstOrDefault(p => p.Id == id);
+            Produto? produto = dbContext
+                .Produtos
+                .FirstOrDefault(p => p.Id == id);
 
             if (produto is null) {
               return NotFound();
@@ -31,11 +39,13 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult<Produto> CreateProduto(Produto novoProduto)
         {
-            if (string.IsNullOrEmpty(novoProduto.Id)) {
-              novoProduto.Id = $"p{produtos.Count + 1}";
+            if (string.IsNullOrEmpty(novoProduto.Id))
+            {
+                novoProduto.Id = Guid.NewGuid().ToString();
             }
 
-            produtos.Add(novoProduto);
+            dbContext.Produtos.Add(novoProduto);
+            dbContext.SaveChanges();
 
             return CreatedAtAction(nameof(CreateProduto), novoProduto);
         }
@@ -43,13 +53,14 @@ namespace WebApplication1.Controllers
         [HttpPost("seed")]
         public IActionResult Seed()
         {
-            produtos.AddRange([
+            dbContext.Produtos.AddRange([
               new Produto("Café", 35) { Id = "p1" },
               new Produto("Água", 12) { Id = "p2" },
               new Produto("Leite", 7) { Id = "p3" },
               new Produto("Fralda", 80) { Id = "p4" },
               new Produto("Desinfetante", 15) { Id = "p5" },
             ]);
+            dbContext.SaveChanges();
 
             return NoContent();
         }
@@ -58,7 +69,8 @@ namespace WebApplication1.Controllers
         public IActionResult UpdateProduto(string id, Produto produtoAAtualizar)
         {
             Produto? produtoEncontrado =
-                produtos
+                dbContext
+                .Produtos
                 .FirstOrDefault(p => p.Id == id);
 
             if (produtoEncontrado == null)
@@ -68,15 +80,16 @@ namespace WebApplication1.Controllers
 
             produtoEncontrado.Nome = produtoAAtualizar.Nome;
             produtoEncontrado.Preco = produtoAAtualizar.Preco;
+            dbContext.SaveChanges();
 
             return NoContent();
-
         }
 
         [HttpDelete("{id}")]
         public IActionResult DeleteProduto(string id) {
             Produto? produtoEncontrado =
-                produtos
+                dbContext
+                .Produtos
                 .FirstOrDefault(p => p.Id == id);
 
             if (produtoEncontrado == null)
@@ -84,7 +97,8 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
 
-            produtos.Remove(produtoEncontrado);
+            dbContext.Produtos.Remove(produtoEncontrado);
+            dbContext.SaveChanges();
 
             return NoContent();
         }

@@ -1,4 +1,6 @@
 
+using Exemplo25_0_API_Pedidos.Database;
+
 namespace WebApplication1
 {
     public class Program
@@ -13,6 +15,8 @@ namespace WebApplication1
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<PedidosDbContext>();
 
             // CORS global, sem política nomeada
             builder.Services.AddCors(options =>
