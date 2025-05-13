@@ -10,6 +10,7 @@ public partial class PedidosDbContext : DbContext
 {
 
     public DbSet<Produto> Produtos { get; set; }
+    public DbSet<Pedido> Pedidos  { get; set; }
 
     public PedidosDbContext()
     {
