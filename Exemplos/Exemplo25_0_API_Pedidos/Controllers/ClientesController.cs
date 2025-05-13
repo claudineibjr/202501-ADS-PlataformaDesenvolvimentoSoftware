@@ -18,13 +18,19 @@ namespace Exemplo25_0_API_Pedidos.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Cliente>> GetClientes()
+        public ActionResult<IEnumerable<ClienteDTOOutput>> GetClientes()
         {
-            return Ok(dbContext.Clientes);
+            IEnumerable<ClienteDTOOutput> clientes = dbContext
+                .Clientes
+                .Select(
+                    c => new ClienteDTOOutput(c.Id, c.Nome, c.Email, c.CPF )
+                );
+
+            return Ok(clientes);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Cliente> GetCliente(string id)
+        public ActionResult<ClienteDTOOutput> GetCliente(string id)
         {
             Cliente? cliente = dbContext
                 .Clientes
@@ -35,18 +41,20 @@ namespace Exemplo25_0_API_Pedidos.Controllers
                 return NotFound();
             }
 
-            return Ok(cliente);
+            ClienteDTOOutput clienteDTO = new ClienteDTOOutput(cliente.Id, cliente.Nome, cliente.Email, cliente.CPF);
+
+            return Ok(clienteDTO);
         }
 
         [HttpPost]
-        public ActionResult<Cliente> CreateCliente(ClienteDTO novoClienteDTO)
+        public ActionResult<Cliente> CreateCliente(ClienteDTOInput novoClienteDTO)
         {
             if (dbContext.Clientes.Any(cliente => cliente.CPF.Equals(novoClienteDTO.CPF)))
             {
                 return BadRequest("Já existe um cliente com este CPF");
             }
 
-            Cliente novoCliente = new Cliente(novoClienteDTO.Nome, novoClienteDTO.Email, novoClienteDTO.CPF);
+            Cliente novoCliente = new Cliente(novoClienteDTO.Nome, novoClienteDTO.Email, novoClienteDTO.Senha, novoClienteDTO.CPF);
 
             dbContext.Clientes.Add(novoCliente);
             dbContext.SaveChanges();
@@ -55,7 +63,7 @@ namespace Exemplo25_0_API_Pedidos.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateCliente(string id, ClienteDTO clienteAAtualizarDTO)
+        public IActionResult UpdateCliente(string id, ClienteDTOInput clienteAAtualizarDTO)
         {
             Cliente? clienteEncontrado =
                 dbContext
@@ -74,7 +82,9 @@ namespace Exemplo25_0_API_Pedidos.Controllers
 
             clienteEncontrado.Nome = clienteAAtualizarDTO.Nome;
             clienteEncontrado.Email = clienteAAtualizarDTO.Email;
+            clienteEncontrado.Senha = clienteAAtualizarDTO.Senha;
             clienteEncontrado.CPF = clienteAAtualizarDTO.CPF;
+
             dbContext.SaveChanges();
 
             return NoContent();
