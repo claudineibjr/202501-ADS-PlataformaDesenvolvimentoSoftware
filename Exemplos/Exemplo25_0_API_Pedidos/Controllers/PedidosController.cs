@@ -1,5 +1,6 @@
 ﻿using Exemplo25_0_API_Pedidos.Database;
 using Exemplo25_0_API_Pedidos.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Model;
@@ -8,6 +9,7 @@ namespace Exemplo25_0_API_Pedidos.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PedidosController : ControllerBase
     {
         private readonly PedidosDbContext dbContext;
