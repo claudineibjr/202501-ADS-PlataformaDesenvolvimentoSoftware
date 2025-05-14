@@ -4,6 +4,7 @@ using Exemplo25_0_API_Pedidos.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using WebApplication1.Model;
 
 namespace Exemplo25_0_API_Pedidos.Controllers
@@ -39,9 +40,15 @@ namespace Exemplo25_0_API_Pedidos.Controllers
                 return BadRequest("Produto não encontrado");
             }
 
+            Claim? clienteId = User.Claims.FirstOrDefault(c => c.Type == "id");
+            if (clienteId is null)
+            {
+                return Unauthorized();
+            }
+
             Cliente? cliente = dbContext
                 .Clientes
-                .Find(novoPedidoDTO.ClienteId);
+                .Find(clienteId.Value);
 
             if (cliente is null)
             {
