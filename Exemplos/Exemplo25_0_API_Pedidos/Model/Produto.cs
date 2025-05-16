@@ -10,6 +10,7 @@ namespace WebApplication1.Model
         public string Id { get; set; }
         public string Nome { get; set; }
         public decimal Preco { get; set; }
+        public List<Pedido> Pedidos { get; set; } = new List<Pedido>();
 
         public Produto(string nome, decimal preco)
         {

@@ -1,5 +1,6 @@
 
 using Exemplo25_0_API_Pedidos.Database;
+using System.Text.Json.Serialization;
 
 namespace WebApplication1
 {
@@ -17,6 +18,11 @@ namespace WebApplication1
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddDbContext<PedidosDbContext>();
+
+            builder.Services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+            });
 
             // CORS global, sem política nomeada
             builder.Services.AddCors(options =>

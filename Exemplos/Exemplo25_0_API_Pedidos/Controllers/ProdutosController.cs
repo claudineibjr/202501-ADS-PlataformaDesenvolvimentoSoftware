@@ -1,4 +1,5 @@
 ﻿using Exemplo25_0_API_Pedidos.Database;
+using Exemplo25_0_API_Pedidos.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Model;
@@ -37,12 +38,9 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Produto> CreateProduto(Produto novoProduto)
+        public ActionResult<Produto> CreateProduto(ProdutoDTO novoProdutoDTO)
         {
-            if (string.IsNullOrEmpty(novoProduto.Id))
-            {
-                novoProduto.Id = Guid.NewGuid().ToString();
-            }
+            Produto novoProduto = new Produto(novoProdutoDTO.nome, novoProdutoDTO.preco);
 
             dbContext.Produtos.Add(novoProduto);
             dbContext.SaveChanges();
@@ -66,7 +64,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateProduto(string id, Produto produtoAAtualizar)
+        public IActionResult UpdateProduto(string id, ProdutoDTO produtoAAtualizarDTO)
         {
             Produto? produtoEncontrado =
                 dbContext
@@ -78,8 +76,8 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
 
-            produtoEncontrado.Nome = produtoAAtualizar.Nome;
-            produtoEncontrado.Preco = produtoAAtualizar.Preco;
+            produtoEncontrado.Nome = produtoAAtualizarDTO.nome;
+            produtoEncontrado.Preco = produtoAAtualizarDTO.preco;
             dbContext.SaveChanges();
 
             return NoContent();
