@@ -1,5 +1,6 @@
 ﻿using Exemplo25_0_API_Pedidos.Database;
 using Exemplo25_0_API_Pedidos.DTO;
+using Exemplo25_0_API_Pedidos.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Model;
@@ -36,7 +37,16 @@ namespace Exemplo25_0_API_Pedidos.Controllers
                 return BadRequest("Produto não encontrado");
             }
 
-            Pedido novoPedido = new Pedido(produtos, DateTime.Now);
+            Cliente? cliente = dbContext
+                .Clientes
+                .Find(novoPedidoDTO.ClienteId);
+
+            if (cliente is null)
+            {
+                return BadRequest("Cliente não encontrado");
+            }
+
+            Pedido novoPedido = new Pedido(produtos, cliente, DateTime.Now);
 
             dbContext.Pedidos.Add(novoPedido);
             dbContext.SaveChanges();

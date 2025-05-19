@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Exemplo25_0_API_Pedidos.Model;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
 using WebApplication1.Model;
@@ -11,6 +12,7 @@ public partial class PedidosDbContext : DbContext
 
     public DbSet<Produto> Produtos { get; set; }
     public DbSet<Pedido> Pedidos  { get; set; }
+    public DbSet<Cliente> Clientes { get; set; }
 
     public PedidosDbContext()
     {

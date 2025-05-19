@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Exemplo25_0_API_Pedidos.Model;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using WebApplication1.Model;
 
@@ -9,6 +10,7 @@ namespace WebApplication1.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public string Id { get; set; }
+        public Cliente Cliente { get; set; }
         public List<Produto> Produtos { get; set; } = new List<Produto>();
         public DateTime Data { get; set; }
         public decimal ValorTotal { get {
@@ -16,9 +18,10 @@ namespace WebApplication1.Model
            }
         }
 
-        public Pedido(List<Produto> produtos, DateTime data)
+        public Pedido(List<Produto> produtos, Cliente cliente, DateTime data)
         {
             this.Produtos = produtos;
+            this.Cliente = cliente;
             this.Data = data;
         }
 
