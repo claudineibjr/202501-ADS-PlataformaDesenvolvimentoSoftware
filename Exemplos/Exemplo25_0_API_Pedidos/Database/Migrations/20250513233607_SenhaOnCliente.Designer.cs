@@ -4,6 +4,7 @@ using Exemplo25_0_API_Pedidos.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Exemplo25_0_API_Pedidos.Migrations
 {
     [DbContext(typeof(PedidosDbContext))]
-    partial class PedidosDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250513233607_SenhaOnCliente")]
+    partial class SenhaOnCliente
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,16 +75,10 @@ namespace Exemplo25_0_API_Pedidos.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("varchar(255)");
 
-                    b.Property<string>("ClienteId")
-                        .IsRequired()
-                        .HasColumnType("varchar(255)");
-
                     b.Property<DateTime>("Data")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClienteId");
 
                     b.ToTable("Pedidos");
                 });
@@ -117,17 +114,6 @@ namespace Exemplo25_0_API_Pedidos.Migrations
                         .HasForeignKey("ProdutosId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("WebApplication1.Model.Pedido", b =>
-                {
-                    b.HasOne("Exemplo25_0_API_Pedidos.Model.Cliente", "Cliente")
-                        .WithMany()
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cliente");
                 });
 #pragma warning restore 612, 618
         }
