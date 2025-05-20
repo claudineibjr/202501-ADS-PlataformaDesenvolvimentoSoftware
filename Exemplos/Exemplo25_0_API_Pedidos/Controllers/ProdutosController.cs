@@ -91,21 +91,6 @@ namespace WebApplication1.Controllers
             return CreatedAtAction(nameof(UploadImage), produto);
         }
 
-        [HttpPost("seed")]
-        public IActionResult Seed()
-        {
-            dbContext.Produtos.AddRange([
-              new Produto("Café", 35, null) { Id = "p1" },
-              new Produto("Água", 12, null) { Id = "p2" },
-              new Produto("Leite", 7, null) { Id = "p3" },
-              new Produto("Fralda", 80, null) { Id = "p4" },
-              new Produto("Desinfetante", 15, null) { Id = "p5" },
-            ]);
-            dbContext.SaveChanges();
-
-            return NoContent();
-        }
-
         [HttpPut("{id}")]
         public IActionResult UpdateProduto(string id, ProdutoDTO produtoAAtualizarDTO)
         {
