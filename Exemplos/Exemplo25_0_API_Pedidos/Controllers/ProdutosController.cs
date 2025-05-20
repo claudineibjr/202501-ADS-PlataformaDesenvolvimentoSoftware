@@ -1,6 +1,5 @@
 ﻿using Exemplo25_0_API_Pedidos.Database;
 using Exemplo25_0_API_Pedidos.DTO;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Model;
@@ -9,7 +8,6 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class ProdutosController : ControllerBase
     {
         private readonly PedidosDbContext dbContext;

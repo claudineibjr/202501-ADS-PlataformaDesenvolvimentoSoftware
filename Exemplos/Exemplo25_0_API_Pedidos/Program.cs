@@ -1,10 +1,5 @@
 
-using Exemplo25_0_API_Pedidos;
 using Exemplo25_0_API_Pedidos.Database;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
-using System.Text;
 using System.Text.Json.Serialization;
 
 namespace WebApplication1
@@ -63,19 +58,6 @@ namespace WebApplication1
                           .AllowAnyHeader()
                           .AllowAnyMethod();
                 });
-            });
-
-            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Settings.Secret))
-                };
             });
 
             var app = builder.Build();
