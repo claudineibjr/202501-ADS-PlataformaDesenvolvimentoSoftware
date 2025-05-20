@@ -93,8 +93,9 @@ namespace WebApplication1
 
             app.UseAuthorization();
 
-
             app.MapControllers();
+
+            app.UseStaticFiles();
 
             app.Run();
         }

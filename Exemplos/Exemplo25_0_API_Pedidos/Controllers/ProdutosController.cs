@@ -50,6 +50,47 @@ namespace WebApplication1.Controllers
             return CreatedAtAction(nameof(CreateProduto), novoProduto);
         }
 
+        [HttpPost("{id}/Upload")]
+        public async Task<ActionResult<Produto>> UploadImage(string id, IFormFile arquivo)
+        {
+            if (arquivo == null || arquivo.Length == 0)
+            {
+                return BadRequest("No image found");
+            }
+
+            Produto? produto = dbContext
+                .Produtos
+                .FirstOrDefault(p => p.Id == id);
+
+            if (produto is null)
+            {
+                return NotFound();
+            }
+
+            string extensaoArquivo = arquivo.FileName.Substring(arquivo.FileName.LastIndexOf(".") + 1);
+
+            string nomePasta = "produtos";
+            string caminhoDaPastaDeUploads = Path.Combine("wwwroot", nomePasta);
+            Directory.CreateDirectory(caminhoDaPastaDeUploads);
+
+            string nomeDoArquivo = $"{id}.{extensaoArquivo}";
+            string caminhoDoArquivo = Path.Combine(caminhoDaPastaDeUploads, nomeDoArquivo);
+
+            using (var stream = new FileStream(caminhoDoArquivo, FileMode.Create))
+            {
+                await arquivo.CopyToAsync(stream);
+            }
+
+            string urlServidor = $"{Request.Scheme}:{Request.Host}";
+            
+            string imagemUrl = $"{urlServidor}/{nomePasta}/{nomeDoArquivo}";
+
+            produto.ImagemURL = imagemUrl;
+            dbContext.SaveChanges();
+
+            return CreatedAtAction(nameof(UploadImage), produto);
+        }
+
         [HttpPost("seed")]
         public IActionResult Seed()
         {
