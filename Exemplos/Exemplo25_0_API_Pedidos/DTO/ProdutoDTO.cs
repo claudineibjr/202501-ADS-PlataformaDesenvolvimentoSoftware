@@ -4,5 +4,6 @@
     {
         public string nome { get; set; }
         public decimal preco { get; set; }
+        public string? imagemUrl { get; set; }
     }
 }

@@ -42,7 +42,7 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult<Produto> CreateProduto(ProdutoDTO novoProdutoDTO)
         {
-            Produto novoProduto = new Produto(novoProdutoDTO.nome, novoProdutoDTO.preco);
+            Produto novoProduto = new Produto(novoProdutoDTO.nome, novoProdutoDTO.preco, novoProdutoDTO.imagemUrl);
 
             dbContext.Produtos.Add(novoProduto);
             dbContext.SaveChanges();
@@ -54,11 +54,11 @@ namespace WebApplication1.Controllers
         public IActionResult Seed()
         {
             dbContext.Produtos.AddRange([
-              new Produto("Café", 35) { Id = "p1" },
-              new Produto("Água", 12) { Id = "p2" },
-              new Produto("Leite", 7) { Id = "p3" },
-              new Produto("Fralda", 80) { Id = "p4" },
-              new Produto("Desinfetante", 15) { Id = "p5" },
+              new Produto("Café", 35, null) { Id = "p1" },
+              new Produto("Água", 12, null) { Id = "p2" },
+              new Produto("Leite", 7, null) { Id = "p3" },
+              new Produto("Fralda", 80, null) { Id = "p4" },
+              new Produto("Desinfetante", 15, null) { Id = "p5" },
             ]);
             dbContext.SaveChanges();
 
@@ -80,6 +80,8 @@ namespace WebApplication1.Controllers
 
             produtoEncontrado.Nome = produtoAAtualizarDTO.nome;
             produtoEncontrado.Preco = produtoAAtualizarDTO.preco;
+            produtoEncontrado.ImagemURL = produtoAAtualizarDTO.imagemUrl;
+
             dbContext.SaveChanges();
 
             return NoContent();
