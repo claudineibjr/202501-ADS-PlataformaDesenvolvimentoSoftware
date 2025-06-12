@@ -1,0 +1,6 @@
+@PlatDS_Sub_HostAddress = http://localhost:5213
+
+GET {{PlatDS_Sub_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
