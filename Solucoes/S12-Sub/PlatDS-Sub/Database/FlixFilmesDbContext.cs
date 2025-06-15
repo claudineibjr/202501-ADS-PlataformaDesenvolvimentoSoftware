@@ -8,7 +8,7 @@ namespace PlatDS_Sub;
 
 public partial class FlixFilmesDbContext : DbContext
 {
-  private DbSet<Filme> Filmes { get; set; }
+  public DbSet<Filme> Filmes { get; set; }
 
     public FlixFilmesDbContext()
   {

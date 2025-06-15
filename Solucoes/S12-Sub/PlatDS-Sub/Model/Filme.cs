@@ -8,10 +8,10 @@ public class Filme
 {
   [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
   [Key]
+  public string Id { get; set; }
   public string Titulo { get; set; }
   public string Descricao { get; set; }
   public int Ano { get; set; }
-  public string Id { get; set; }
   public decimal Arrecadacao { get; set; }
   public float NotaIMDB { get; set; }
   public List<string> Atores { get; set; }
@@ -21,8 +21,8 @@ public class Filme
     this.Titulo = Titulo;
     this.Descricao = Descricao;
     this.Ano = Ano;
-    this.Arrecadacao = Ano;
-    this.NotaIMDB = Ano;
+    this.Arrecadacao = Arrecadacao;
+    this.NotaIMDB = NotaIMDB;
     this.Atores = Atores;
   }
 

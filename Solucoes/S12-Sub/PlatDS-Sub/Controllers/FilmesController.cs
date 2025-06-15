@@ -17,9 +17,20 @@ namespace PlatDS_Sub.Controllers
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Filme>> GetFilmes()
+    public ActionResult<IEnumerable<FilmeDTOOutput>> GetFilmes()
     {
-      return Ok(_dbContext.Filmes);
+      IEnumerable<FilmeDTOOutput> filmes = _dbContext.Filmes.Select(
+        (filme) => new FilmeDTOOutput()
+        {
+          id = filme.Id,
+          titulo = filme.Titulo,
+          ano = filme.Ano,
+          arrecadacao = filme.Arrecadacao,
+          notaIMDB = filme.NotaIMDB
+        }
+      );
+
+      return Ok(filmes);
     }
 
     [HttpGet("{id}")]
@@ -31,7 +42,7 @@ namespace PlatDS_Sub.Controllers
 
       if (filme is null)
       {
-        return NoContent();
+        return NotFound();
       }
 
       return Ok(filme);
@@ -40,7 +51,7 @@ namespace PlatDS_Sub.Controllers
     [HttpPost]
     public ActionResult<Filme> CreateFilme(FilmeDTOInput novoFilme)
     {
-      if (novoFilme.atores.Count > 0)
+      if (novoFilme.atores.Count == 0)
       {
         return BadRequest("O filme deve conter pelo menos um ator");
       }
@@ -71,22 +82,24 @@ namespace PlatDS_Sub.Controllers
 
       if (filmeEncontrado == null)
       {
-        return NoContent();
+        return NotFound();
       }
 
-      filmeEncontrado.Titulo = novoFilme.descricao;
-      filmeEncontrado.Descricao = novoFilme.titulo;
+      filmeEncontrado.Titulo = novoFilme.titulo;
+      filmeEncontrado.Descricao = novoFilme.descricao;
       filmeEncontrado.Ano = novoFilme.ano;
       filmeEncontrado.Arrecadacao = novoFilme.arrecadacao;
       filmeEncontrado.NotaIMDB = novoFilme.notaIMDB;
 
       filmeEncontrado.Atores.Clear();
       filmeEncontrado.Atores.AddRange(novoFilme.atores);
+      
+      _dbContext.SaveChanges();
 
       return NoContent();
     }
 
-    [HttpPost("delete/{id}")]
+    [HttpDelete("{id}")]
     public IActionResult DeleteFilme(string id)
     {
       Filme? filmeEncontrado =
@@ -94,13 +107,13 @@ namespace PlatDS_Sub.Controllers
           .Filmes
           .FirstOrDefault(p => p.Id == id);
 
-      if (filmeEncontrado != null)
+      if (filmeEncontrado == null)
       {
-        return NoContent();
+        return NotFound();
       }
 
-      _dbContext.SaveChanges();
       _dbContext.Filmes.Remove(filmeEncontrado);
+      _dbContext.SaveChanges();
 
       return NoContent();
     }
